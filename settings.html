@@ -1,0 +1,464 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>My Page</title>
+    <meta name="viewport" content="width=320, height=568, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="js/jqm/jquery.mobile-1.2.0.min.css" />
+    <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="js/settings.js"></script>
+    <script type="text/javascript" src="js/jqm/jquery.mobile-1.2.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/scrollstyle.css" />
+</head>
+<body style="width: 320px; height: 568px; font-size: 11px; background: #e7e7e7;">
+    <!-- Home -->
+    <div data-role="page" id="page1" data-title="屏蔽微博广告">
+        <div data-theme="c" data-role="header" data-position="fixed">
+            <!--
+            <a href="about.html" data-icon="help" data-theme="e">帮助</a>-->
+            <h3>屏蔽微博广告
+            </h3>
+            <a href="#dialog1" data-icon="refresh" data-theme="e" data-role="button" data-rel="dialog">重置</a>
+        </div>
+        <div data-role="content">
+            <div data-role="collapsible-set" data-theme="b" data-content-theme="c">
+                <div data-role="collapsible" data-collapsed="false">
+                    <h3>微博广告
+                    </h3>
+                    <div id="checkboxes1" data-role="fieldcontain">
+                        <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+                            <legend>屏蔽微博广告分类选择
+                            </legend>
+                            <input id="awardRetweet" name="" type="checkbox">
+                            <label for="awardRetweet">
+                                有奖转发
+                            </label>
+                            <input id="feed_list_recommend" name="" type="checkbox">
+                            <label for="feed_list_recommend">
+                                精彩微博推荐（不经常出现）
+                            </label>
+                            <input id="recommendedFollowing" name="" type="checkbox">
+                            <label for="recommendedFollowing">
+                                推荐关注
+                            </label>
+                            <input id="promotionalAD" name="" type="checkbox">
+                            <label for="promotionalAD">
+                                促销广告
+                            </label>
+                            <input id="micromsg" name="" type="checkbox">
+                            <label for="micromsg">
+                                微信推广
+                            </label>
+                            <input id="groupon" name="" type="checkbox">
+                            <label for="groupon">
+                                团购秒杀
+                            </label>
+                            <input id="rebate" name="" type="checkbox">
+                            <label for="rebate">
+                                返利网推广
+                            </label>
+                            <input id="invalidWB" name="" type="checkbox">
+                            <label for="invalidWB">
+                                无效微博
+                            </label>
+                        </fieldset>
+                    </div>
+                </div>
+                <div data-role="collapsible" data-collapsed="true">
+                    <h3>板块广告
+                    </h3>
+                    <span style="font-size: 16px; font-weight: normal; color: #AAA;">请勾选要屏蔽的版块
+                    </span>
+                    <div id="checkboxes2" data-role="fieldcontain">
+
+                        <fieldset id="all" data-role="controlgroup" data-type="vertical" data-mini="true">
+                            全局设置：
+                            <input id="pl_content_top" name="" type="checkbox" value="WB_webim" data-theme="c">
+                            <label for="pl_content_top">
+                                屏蔽顶栏<br />
+                                <span style="font-size: 10px; font-weight: normal; color: #AAA;">微博的小黄签也将被屏蔽</span>
+                            </label>
+                            <input id="WB_webim" name="" type="checkbox" value="WB_webim" data-theme="c">
+                            <label for="WB_webim">
+                                屏蔽右侧私信聊天<br />
+                                <span style="font-size: 10px; font-weight: normal; color: #AAA;">好友上线提醒也将被屏蔽</span>
+                            </label>
+                            <input id="Box_right" name="" type="checkbox" value="Box_right" data-theme="c">
+                            <label for="Box_right" title="个人信息移动到左侧，同时用详细列表补占空位，加宽视野">
+                                简洁模式（屏蔽右边栏所有内容）<br />
+                                <span style="font-size: 10px; font-weight: normal; color: #AAA;">右侧所有信息将不予显示</span>
+                            </label>
+                        </fieldset>
+                        <br />
+                        <fieldset id="mainWb" data-role="controlgroup" data-type="vertical" data-mini="true">
+                            我的首页（所有关注微博）：
+                            
+                            <input id="interest" name="" type="checkbox" data-theme="c">
+                            <label for="interest">
+                                可能感兴趣的人
+                            </label>
+                            <input id="ads" name="" type="checkbox" data-theme="c">
+                            <label for="ads">
+                                活动广告
+                            </label>
+                            <input id="zone" name="" type="checkbox" data-theme="c">
+                            <label for="zone">
+                                会员专区会员动态
+                            </label>
+                            <input id="allinone" name="" type="checkbox" data-theme="c">
+                            <label for="allinone">
+                                微吧微刊应用
+                            </label>
+                            <input id="noticeboard" name="" type="checkbox" data-theme="c">
+                            <label for="noticeboard">
+                                公告栏
+                            </label>
+                            <input id="app" name="" type="checkbox" data-theme="c">
+                            <label for="app">
+                                最近使用应用列表
+                            </label>
+                            <input id="ads_" name="" type="checkbox" data-theme="c">
+                            <label for="ads_">
+                                右侧话题广告
+                            </label>
+                            <input id="pl_content_commentTopNav" name="" type="checkbox" data-theme="c">
+                            <label for="pl_content_commentTopNav">
+                                热评微博（右侧标签）
+                            </label>
+                            <input id="pl_rightmod_feedback" name="" type="checkbox" data-theme="c">
+                            <label for="pl_rightmod_feedback">
+                                新浪微博意见反馈（右侧标签）
+                            </label>
+                            <input id="pl_rightmod_helpcommonbox" name="" type="checkbox" data-theme="c">
+                            <label for="pl_rightmod_helpcommonbox">
+                                共同评论使用小帮助（右侧标签）
+                            </label>
+                            <input id="pl_rightmod_helpat" name="" type="checkbox" data-theme="c">
+                            <label for="pl_rightmod_helpat">
+                                @使用小帮助（右侧标签）
+                            </label>
+                            <input id="pl_rightmod_reportentry" name="" type="checkbox" data-theme="c">
+                            <label for="pl_rightmod_reportentry">
+                                微博举报处理中心（右侧标签）
+                            </label>
+                        </fieldset>
+                        <br />
+                        我的微博（个人页面）：
+                        <fieldset id="myWb" data-role="controlgroup" data-type="vertical" data-mini="true">
+                            <!--<input id="W_main_2r" name="" type="checkbox" data-theme="e">
+                            <label for="W_main_2r" title="同时用详细列表补占空位">
+                                右侧所有内容
+                            </label>-->
+                            <input id="pl_profile_giftBox" name="" type="checkbox" data-theme="e">
+                            <label for="pl_profile_giftBox">
+                                我的礼物盒
+                            </label>
+                            <input id="moduleMyRelation" name="" type="checkbox" data-theme="e">
+                            <label for="moduleMyRelation">
+                                我的关注和粉丝
+                            </label>
+                            <input id="trustPagelet_profile_openApplist" name="" type="checkbox" data-theme="e">
+                            <label for="trustPagelet_profile_openApplist">
+                                开启应用卡片 记录你的互联网生活
+                            </label>
+                            <input id="moduleHisRelation" name="" type="checkbox" data-theme="e">
+                            <label for="moduleHisRelation">
+                                微关系
+                            </label>
+                            <input id="modulealbum" name="" type="checkbox" data-theme="e">
+                            <label for="modulealbum">
+                                微相册
+                            </label>
+                        </fieldset>
+                        <br />
+                        XXXX的微博（微博详细内容页）：
+                        <fieldset id="xxxxWb" data-role="controlgroup" data-type="vertical" data-mini="true">
+                            <input id="pl_profile_hisGiftBox" name="" type="checkbox" data-theme="c">
+                            <label for="pl_profile_hisGiftBox">
+                                他的礼物盒
+                            </label>
+                            <input id="pl_profile_unfollow" name="" type="checkbox" data-theme="c">
+                            <label for="pl_profile_unfollow">
+                                被他吸引？从关注开始，进入他的世界。
+                            </label>
+                            <input id="recomendedkan" name="" type="checkbox" data-theme="c">
+                            <label for="recomendedkan">
+                                推荐微刊
+                            </label>
+                            <input id="hotmblog" name="" type="checkbox" data-theme="c">
+                            <label for="hotmblog">
+                                热门微博
+                            </label>
+                            <input id="weiba" name="" type="checkbox" data-theme="c">
+                            <label for="weiba">
+                                推荐微吧/微吧推荐
+                            </label>
+                            <input id="photo" name="" type="checkbox" data-theme="c">
+                            <label for="photo">
+                                推荐图片
+                            </label>
+                            <input id="music" name="" type="checkbox" data-theme="c">
+                            <label for="music">
+                                推荐音乐
+                            </label>
+                            <input id="recommblog" name="" type="checkbox" data-theme="c">
+                            <label for="recommblog">
+                                推荐微博
+                            </label>
+                            <input id="topic" name="" type="checkbox" data-theme="c">
+                            <label for="topic">
+                                推荐话题
+                            </label>
+                            <input id="recomperson" name="" type="checkbox" data-theme="c">
+                            <label for="recomperson">
+                                推荐关注
+                            </label>
+                        </fieldset>
+                        <br />
+                        旧版微博（3.6）：
+                        <fieldset id="oldver" data-role="controlgroup" data-type="vertical" data-mini="true">
+                            <input id="help" name="" type="checkbox" data-theme="e">
+                            <label for="help">
+                                玩转微博/帮助
+                            </label>
+                            <input id="medal" name="" type="checkbox" data-theme="e">
+                            <label for="medal">
+                                勋章
+                            </label>
+                            <input id="invite" name="" type="checkbox" data-theme="e">
+                            <label for="invite">
+                                邀请
+                            </label>
+                            <input id="mood" name="" type="checkbox" data-theme="e">
+                            <label for="mood">
+                                心情
+                            </label>
+                            <input id="checkin" name="" type="checkbox" data-theme="e">
+                            <label for="checkin">
+                                签到
+                            </label>
+                            <input id="oldUser" name="" type="checkbox" data-theme="e">
+                            <label for="oldUser">
+                                微博精选、Qing推荐等旧版推广
+                            </label>
+                        </fieldset>
+                    </div>
+                </div>
+                <div data-role="collapsible" data-collapsed="true">
+                    <h3>自定义关键字
+                    </h3>
+                    <div data-role="fieldcontain">
+                        <fieldset data-role="controlgroup">
+                            <label for="keyword" style="font-size: 11px;">
+                                屏蔽包含以下内容/黑名单的微博
+                            </label>
+                            <textarea name="" id="keyword" placeholder="" style="height: 150px;"></textarea>
+                            <ul style="padding-left: 10px;">
+                                <li style="width: 100%; list-style: disc;">
+                                    <label for="keyword" style="font-size: 11px;">逗号或空格分隔，黑名单库：<a href='http://t.cn/zj354vB' target='_blank'>t.cn/zj354vB</a> (需要翻墙)</label></li>
+                                <li style="width: 100%; list-style: disc;">
+                                    <label for="keyword" style="font-size: 11px;">可以填写关键词（“星座”等）、用户（“全球XXX”、“史上XXX”等）、来源（“皮皮时光机”等）等</label></li>
+                                <li style="width: 100%; list-style: disc;">
+                                    <label for="keyword" style="font-size: 11px;">不要填写“的”、“了”、“来自”、“转发”空格等每条微博都有会包含关键词</label></li>
+                            </ul>
+                        </fieldset>
+                        <!--星座,白羊,金牛,双子,巨蟹,狮子座,处女座,天秤,天蝎,射手座,摩羯,水瓶座,双鱼座-->
+                    </div>
+                    <div data-role="fieldcontain">
+                        <fieldset data-role="controlgroup">
+                            从不屏蔽包含以下内容/白名单的微博
+                            <label for="exkeyword" style="font-size: 11px;">
+                            </label>
+                            <textarea name="" id="exkeyword" placeholder="" style="height: 100px;"></textarea>
+                            <ul style="padding-left: 10px;">
+                                <li style="width: 100%; list-style: disc;">
+                                    <label for="exkeyword" style="font-size: 11px;">逗号或空格分隔，白名单库：<a href='http://t.cn/zj35qVB' target='_blank'>t.cn/zj35qVB</a> (需要翻墙)</label></li>
+                                <li style="width: 100%; list-style: disc;">
+                                    <label for="exkeyword" style="font-size: 11px; width: 100%;">可以填写关键词、用户、来源等非微博内容，允许某关注人的广告可填入“boy叔”等（不要加@）</label></li>
+                                <li style="width: 100%; list-style: disc;">
+                                    <label for="exkeyword" style="font-size: 11px;">不要填写“的”、“了”、“来自”、“转发”空格等每条微博都有会包含关键词</label></li>
+                            </ul>
+                        </fieldset>
+                        <!--流星雨-->
+                    </div>
+                </div>
+                <div data-role="collapsible" data-collapsed="true">
+                    <h3>辅助功能
+                    </h3>
+                    <div id="checkboxes3" data-role="fieldcontain">
+                        <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+                            <input id="moreList" name="" type="checkbox">
+                            <label for="moreList">
+                                自动展开左侧微博分组<br />
+                                <span style="font-size: 10px; font-weight: normal; color: #AAA;">页面加载完毕即将左侧默认隐藏的分组信息显示</span>
+                            </label>
+                            <input id="superScrolling" name="" type="checkbox">
+                            <label for="superScrolling">
+                                启用超级滚动<br />
+                                <span style="font-size: 10px; font-weight: normal; color: #AAA;">双击微博内容滚动到顶部，可按键盘A/Z键或上下键滚动到前后微博</span>
+                            </label>
+                            <input id="superGallery" name="" type="checkbox">
+                            <label for="superGallery">
+                                启用微博画廊<br />
+                                <span style="font-size: 10px; font-weight: normal; color: #AAA;">以微博画廊方式直接显示对应微博的大尺寸图片（仅适用于非广告微博）</span>
+                            </label>
+                            <input id="noforward" name="" type="checkbox">
+                            <label for="noforward">
+                                取消“同时转发到我的微博”<br />
+                                <span style="font-size: 10px; font-weight: normal; color: #AAA;">评论对超过一定评论/转发超过一定数量的微博时自动取消此选项</span>
+                            </label>
+                        </fieldset>
+                    </div>
+                </div>
+                <div data-role="collapsible" data-collapsed="true">
+                    <h3>其它选项
+                    </h3>
+                    特殊权限：
+                    <div id="checkboxes4" data-role="fieldcontain">
+                        <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+                            <input id="exSelf" name="" type="checkbox">
+                            <label for="exSelf">
+                                不屏蔽自己发布的广告
+                            </label>
+                        </fieldset>
+                    </div>
+                    <br />
+                    头像样式：
+                    <div data-role="fieldcontain">
+                        <fieldset id="photo_style" data-role="controlgroup" data-type="horizontal" data-mini="true">
+                            <input id="photo_default" name="default" value="photo_default" type="radio">
+                            <label for="photo_default">
+                                无
+                           
+                            </label>
+                            <input id="photo_Light" name="default" value="photo_Light" type="radio">
+                            <label for="photo_Light">
+                                倒角
+                           
+                            </label>
+                            <input id="photo_Heavy" name="default" value="photo_Heavy" type="radio">
+                            <label for="photo_Heavy">
+                                圆角
+                           
+                            </label>
+                            <input id="photo_Full" name="default" value="photo_Full" type="radio">
+                            <label for="photo_Full">
+                                圆形
+                           
+                            </label>
+                            <input id="photo_Barrel" name="default" value="photo_Barrel" type="radio">
+                            <label for="photo_Barrel">
+                                鼓形
+                           
+                            </label>
+                        </fieldset>
+                    </div>
+                    <br />
+                    屏蔽信息：
+                    <div data-role="fieldcontain">
+                        <fieldset id="infosett" data-role="controlgroup" data-type="vertical" data-mini="true">
+                            <input id="showWBAD" name="" value="showWBAD" type="radio">
+                            <label for="showWBAD">
+                                显示屏蔽信息
+                            </label>
+                            <input id="deleteWBAD" name="" value="deleteWBAD" type="radio">
+                            <label for="deleteWBAD">
+                                直接删除广告微博
+                            </label>
+                        </fieldset>
+                    </div>
+                    <br />
+                    颜色选择：
+                    <div data-role="fieldcontain">
+                        <fieldset id="collsett" data-role="controlgroup" data-type="vertical" data-mini="true">
+                            <input id="transparent" name="" value="transparent" type="radio">
+                            <label for="transparent">
+                                透明
+                            </label>
+                            <input id="magenta" name="" value="#ff0097" type="radio">
+                            <label for="magenta">
+                                <span style="background-color: #FF0097 !important; border-radius: 10px; width: 100PX;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            </label>
+                            <input id="prple" name="" value="#a200ff" type="radio">
+                            <label for="prple">
+                                <span style="background-color: #a200ff !important; border-radius: 10px; width: 100PX;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            </label>
+                            <input id="teal" name="" value="#00aba9" type="radio">
+                            <label for="teal">
+                                <span style="background-color: #00aba9 !important; border-radius: 10px; width: 100PX;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            </label>
+                            <input id="lime" name="" value="#8cbf26" type="radio">
+                            <label for="lime">
+                                <span style="background-color: #8cbf26 !important; border-radius: 10px; width: 100PX;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            </label>
+                            <input id="brown" name="" value="#a05000" type="radio">
+                            <label for="brown">
+                                <span style="background-color: #a05000 !important; border-radius: 10px; width: 100PX;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            </label>
+                            <input id="pink" name="" value="#e671b8" type="radio">
+                            <label for="pink">
+                                <span style="background-color: #e671b8 !important; border-radius: 10px; width: 100PX;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            </label>
+                            <input id="orange" name="" value="#f09609" type="radio">
+                            <label for="orange">
+                                <span style="background-color: #f09609 !important; border-radius: 10px; width: 100PX;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            </label>
+                            <input id="blue" name="" value="#1ba1e2" type="radio">
+                            <label for="blue">
+                                <span style="background-color: #1ba1e2 !important; border-radius: 10px; width: 100PX;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            </label>
+                            <input id="red" name="" value="#e51400" type="radio">
+                            <label for="red">
+                                <span style="background-color: #e51400 !important; border-radius: 10px; width: 100PX;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            </label>
+                            <input id="green" name="" value="#339933" type="radio">
+                            <label for="green">
+                                <span style="background-color: #339933 !important; border-radius: 10px; width: 100PX;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            </label>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            .ui-navbar .ui-btn .ui-btn-inner { padding-top: 40px !important; }
+            .ui-navbar .ui-btn .ui-icon { width: 30px!important; height: 30px!important; margin-left: -15px !important; box-shadow: none!important; -moz-box-shadow: none!important; -webkit-box-shadow: none!important; -webkit-border-radius: 0 !important; border-radius: 0 !important; }
+            .ui-icon-settings { background: url(img/settings.png) 50% 50% no-repeat; background-size: 26px 28px; }
+            .ui-icon-about { background: url(img/about.png) 50% 50% no-repeat; background-size: 26px 18px; }
+            .ui-icon-helps { background: url(img/help.png) 50% 50% no-repeat; background-size: 24px 24px; }
+            .ui-icon-feedback { background: url(img/feedback.png) 50% 50% no-repeat; background-size: 24px 16px; }
+        </style>
+        <div data-role="footer" data-theme="c" data-position="fixed">
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li data-theme="c"><a href="settings.html" data-icon="settings" class="ui-btn-active ui-state-persist">选项</a></li>
+                    <li><a data-icon="about" href="about.html">关于</a></li>
+                    <li><a data-icon="helps" href="help.html">帮助</a></li>
+                    <li><a data-icon="feedback" href="feedback.html">反馈</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--<div data-theme="d" data-role="footer" data-position="fixed">
+            <h3>反馈：
+                <a target="_blank" href="http://weibo.com/leejaen" style="text-decoration: none; position: relative; top: 2px;">
+                    <img src="img/sinaweibo.png" alt="@boy叔" /></a>
+                <a target="_blank" href="http://mail.163.com/share/mail2me.htm#email=108101101106097101110064049054051046099111109" style="text-decoration: none; position: relative; top: 2px;">
+                    <img src="http://mimg.127.net/xm/all/share/120111/img/mailme_4.png" alt="直接发送邮件" /></a>
+            </h3>
+        </div>-->
+    </div>
+    <div data-role="page" id="dialog1" data-theme="d" style="background-color: rgba(231,231,231,.5) !important">
+        <div data-role="content" data-theme="c" style="margin-top: 160px">
+            <div data-role="collapsible" data-content-theme="c" data-collapsed="false" data-theme="c">
+                <h3>注意</h3>
+                <p>
+                    是否继续重置本插件配置选项？重置后不可恢复。<br />
+                    <br />
+                    <span style="color: #f00">重置前请备份屏蔽关键字</span>
+                </p>
+            </div>
+            <a data-role="button" href="#" id="btnDefault" data-theme="e">重置</a>
+            <a data-role="button" href="#" data-rel="back" data-theme="c">取消</a>
+        </div>
+    </div>
+</body>
+</html>
