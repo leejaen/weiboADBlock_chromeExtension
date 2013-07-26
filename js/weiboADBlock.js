@@ -426,6 +426,7 @@
         }
         $(infos.WBselector).children().each(function (i)//所有微博div
         {
+		
             var I = i;
             why = "没有原因，这条就是广告";
             i = infos.counter - 1;
