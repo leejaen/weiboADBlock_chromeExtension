@@ -22,7 +22,7 @@
         })()
 
         , WBselector: ".WB_feed[node-type='feed_list']"
-        , eachWBselector: ".WB_feed[node-type='feed_list']>div[action-type='feed_list_item']"
+        , eachWBselector: ".WB_feed[node-type='feed_list']>div"
         , gallerySelector: "img[class='bigcursor'][node-type='feed_list_media_bgimg']"
 
         , theNickName: $("#pl_content_top a[class='gn_name']").text()//自己的名字，下面的判断允许自己微博广告时候用

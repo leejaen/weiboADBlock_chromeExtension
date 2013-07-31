@@ -82,22 +82,25 @@ chrome.extension.onRequest.addListener(function (request, sender, sendResponse)
                     smurfs += "$抽奖的、转发的都是骗子,中奖,奖地址,大奖,仅售,精美礼,奖品,礼品,赢多项奖品,就有机会,有机会获得,幸运粉丝,有奖转发,转发并,的请转发,内转发,同意的转,转发有奖,转发本微博,转发此微博,评论本微博,@3位,@5位,@3名,@5名,好礼,";
                     break;
                 case "recommendedFollowing"://推荐关注
-                    smurfs += "$推荐关注←_←,关注@,推荐@,快来@,终于有人开通,推荐关注,轻松关注,推荐给大家,必须关注,强烈推荐,关注下,喜欢这个微博,喜欢这个帐号,也关注TA,";
+                    smurfs += "$臭不要脸求关注,关注@,推荐@,快来@,终于有人开通,推荐关注,轻松关注,推荐给大家,必须关注,强烈推荐,关注下,喜欢这个微博,喜欢这个帐号,";
+                    break;
+                case "spread"://好友关注
+                    smurfs += "$好友关注,也关注TA,";
                     break;
                 case "promotionalAD"://促销广告
-                    smurfs += "$促销广告,地址：t.cn,周年庆,UGG,爆促销,包邮,卖疯了,详情请点击,全网最低,假一赔,可享受,可免费,免费获,数量有限,可以享受,除痘,正品,到货啦,痘痘,发售,还不赶紧,折起售,优惠！,1折,2折,3折,5折,9折,猪油膏,祛痘,起拍,小肚腩,去黑头,贵宾专线,贵宾热线,";
+                    smurfs += "$促销广告秀下限,地址：t.cn,周年庆,UGG,爆促销,包邮,卖疯了,详情请点击,全网最低,假一赔,可享受,可免费,免费获,数量有限,可以享受,除痘,正品,到货啦,痘痘,发售,还不赶紧,折起售,优惠！,1折,2折,3折,5折,9折,猪油膏,祛痘,起拍,小肚腩,去黑头,贵宾专线,贵宾热线,";
                     break;
                 case "micromsg"://微信推广
                     smurfs += "$微信推广,微信里也有,微信号,扫描二维码,";
                     break;
                 case "groupon"://团购秒杀
-                    smurfs += "$团购秒杀,折秒杀,元秒杀,团购地址,分享地址,秒杀地址,推荐地址,购买地址,抢购地址,宝贝地址,活动链接,抢货地址,";
+                    smurfs += "$团购秒杀掉节操,折秒杀,元秒杀,团购地址,分享地址,秒杀地址,推荐地址,购买地址,抢购地址,宝贝地址,活动链接,抢货地址,";
                     break;
                 case "rebate"://返利网推广
                     smurfs += "$返利网推广,返利网,省下更多,";
                     break;
                 case "invalidWB"://无效微博
-                    smurfs += "$无效微博,此微博已被作者删除,此微博已被删除,此微博不适宜对外公开,";
+                    smurfs += "$可怜的娃儿又被和谐了,此微博已被作者删除,此微博已被删除,此微博不适宜对外公开,";
                     break;
                     //其他设置
                 case "exSelf":
@@ -150,10 +153,10 @@ chrome.extension.onRequest.addListener(function (request, sender, sendResponse)
                 case "app"://最近使用应用列表
                     sectionKey += "#pl_leftnav_app,";
                     break;
-                case "ads_"://最近使用应用列表
+                case "ads_"://广告
                     sectionKey += "li[id^='ads'],";
                     break;
-                case "ads"://最近使用应用列表
+                case "ads"://广告
                     sectionKey += "#pl_rightmod_ads36,#pl_rightmod_ads35,";
                     break;
                 case "help"://玩转微博/帮助

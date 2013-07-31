@@ -16,6 +16,7 @@
         window.localStorage["ads_"] = "ads_";
         window.localStorage["allinone"] = "allinone";
         window.localStorage["app"] = "app";
+        window.localStorage["spread"] = "spread";
         window.localStorage["awardRetweet"] = "awardRetweet";
         window.localStorage["checkin"] = "checkin";
         window.localStorage["colorvalue"] = "#ff0097";
