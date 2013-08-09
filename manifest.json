@@ -17,7 +17,7 @@
 	"web_accessible_resources":["css/app.css","img/icon100.png","img/icon16.png"],
 	"content_scripts": [{
 		"matches": ["http://e.weibo.com/*","http://weibo.com/*"],
-		"css": ["css/app.css","js/fancybox/source/jquery.fancybox.css","js/fancybox/source/helpers/jquery.fancybox-thumbs.css","js/fancybox/source/helpers/jquery.fancybox-buttons.css"],
-		"js": ["js/jquery-1.7.2.min.js","js/jquery.scrollintoview.js","js/fancybox/lib/jquery.mousewheel-3.0.6.pack.js","js/fancybox/source/jquery.fancybox.js","js/fancybox/source/helpers/jquery.fancybox-thumbs.js","js/fancybox/source/helpers/jquery.fancybox-buttons.js","js/weiboADBlock.js"]
+		"css": ["css/app.css"],
+		"js": ["js/jquery-1.7.2.min.js","js/jquery.scrollintoview.js","js/weiboADBlock.js"]
 	}]
 }

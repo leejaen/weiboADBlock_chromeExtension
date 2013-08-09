@@ -1,15 +1,11 @@
-﻿$(document).bind("pageinit", function ()
-{
-    if (window.localStorage.getItem("usedWBADtag") != "USED")
-    {
+﻿$(document).bind("pageinit", function () {
+    if (window.localStorage.getItem("usedWBADtag") != "USED") {
         //用户没有用过本插件使用默认配置
         init();
     }
-    function init(resource)
-    {
+    function init(resource) {
         window.localStorage.clear();
-        if (resource == "btnDefault")
-        {//不清空usedWBADtag
+        if (resource == "btnDefault") {//不清空usedWBADtag
             window.localStorage["usedWBADtag"] = "USED";//记录下用户已经使用过
         };
         window.localStorage["ads"] = "ads";
@@ -49,132 +45,97 @@
         window.localStorage["recommendedFollowing"] = "recommendedFollowing";
         window.localStorage["recomperson"] = "recomperson";
         window.localStorage["showOrDelWBADInfo"] = "deleteWBAD";
-        //window.localStorage["superScrolling"] = "superScrolling";
-        //window.localStorage["superGallery"] = "superGallery";
         window.localStorage["noforward"] = "noforward";
         window.localStorage["topic"] = "topic";
         window.localStorage["trustPagelet_profile_openApplist"] = "trustPagelet_profile_openApplist";
         window.localStorage["weiba"] = "weiba";
         window.localStorage["zone"] = "zone";
     }
-    function loadProfile()
-    {//遍历选定配置中已选定的项目
+    function loadProfile() {//遍历选定配置中已选定的项目
         $("input").attr("checked", false).checkboxradio("refresh");
         $("input").checkboxradio('enable').checkboxradio("refresh");
         $("textarea").val("");
 
         var colortag = 0, deletetag = 0, styletag = 0;
-        for (var i = 0; i < window.localStorage.length; i++)
-        {
+        for (var i = 0; i < window.localStorage.length; i++) {
             var key = window.localStorage.key(i);
             var value = window.localStorage.getItem(key);
             console.log("value=" + value);
-            if (key == "Box_right")
-            {
-                if (value == "Box_right")
-                {//勾选本项，其他项目失效
+            if (key == "Box_right") {
+                if (value == "Box_right") {//勾选本项，其他项目失效
                     $("#mainWb,#myWb,#xxxxWb,#oldver").find("input[type='checkbox']").checkboxradio('disable').checkboxradio("refresh");
                     $("#Box_right").checkboxradio('enable').attr("checked", true).checkboxradio("refresh");
-                } else
-                {
+                } else {
                     $("#mainWb,#myWb,#xxxxWb,#oldver").find("input[type='checkbox']").checkboxradio('enable').checkboxradio("refresh");
                     $("#Box_right").checkboxradio('disable').attr("checked", false).checkboxradio("refresh");
                 }
                 continue;
             }
-            //if (key == "WB_webim")
-            //{
-            //    if (value == "WB_webim")
-            //    {
-            //        $("#WB_webim").checkboxradio('enable').attr("checked", true).checkboxradio("refresh");
-            //    } else
-            //    {
-            //        $("#WB_webim").checkboxradio('disable').attr("checked", false).checkboxradio("refresh");
-            //    }
-            //    continue;
-            //}
-            if (key == "keyword")
-            {
+            if (key == "keyword") {
                 $("#keyword").val(value);
                 continue;
             }
-            if (key == "exkeyword")
-            {
+            if (key == "exkeyword") {
                 $("#exkeyword").val(value);
                 continue;
             }
-            if (key == "showOrDelWBADInfo")
-            {
+            if (key == "showOrDelWBADInfo") {
                 deletetag = 1;
                 $("#infosett input[type='radio'][value='" + value + "']").attr("checked", true).checkboxradio("refresh");
-                if (value == "showWBAD")
-                {
+                if (value == "showWBAD") {
                     $("#collsett input[type='radio']").checkboxradio('enable').checkboxradio("refresh");
-                } else if (value == "deleteWBAD")
-                {
+                } else if (value == "deleteWBAD") {
                     $("#collsett input[type='radio']").checkboxradio('disable').checkboxradio("refresh");
                 }
                 continue;
             }
-            if (key == "photostyle")
-            {
+            if (key == "photostyle") {
                 styletag = 1;
                 $("#photo_style input[type='radio'][value='" + value + "']").attr("checked", true).checkboxradio("refresh");
                 continue;
             }
-            if (key == "colorvalue")
-            {
+            if (key == "colorvalue") {
                 colortag = 1;
                 $("#collsett input[type='radio'][value='" + value + "']").attr("checked", true).checkboxradio("refresh");
                 continue;
             }
             $("#" + value).attr("checked", true).checkboxradio("refresh");
         }
-        if (deletetag == 0)
-        {//没有勾选，默认显示
+        if (deletetag == 0) {//没有勾选，默认显示
             window.localStorage["showOrDelWBADInfo"] = "showWBAD";
             $("input[type='radio'][value='showWBAD']").attr("checked", true).checkboxradio("refresh");
         }
-        if (colortag == 0)
-        {//没有勾选，默认颜色
+        if (colortag == 0) {//没有勾选，默认颜色
             window.localStorage["colorvalue"] = "#00aba9";
             $("input[type='radio'][value='#00aba9']").attr("checked", true).checkboxradio("refresh");
         }
-        if (styletag == 0)
-        {//没有勾选，默认颜色
+        if (styletag == 0) {//没有勾选，默认颜色
             window.localStorage["photostyle"] = "photo_default";
             $("input[type='radio'][value='photo_default']").attr("checked", true).checkboxradio("refresh");
         }
     }
     loadProfile();
-    $("input[type='checkbox']").bind("click", function (event, ui)
-    {
+    $("input[type='checkbox']").bind("click", function (event, ui) {
         var id = $(this).attr("id");
-        if ($(this).attr("checked") == "checked")
-        {
+        if ($(this).attr("checked") == "checked") {
             window.localStorage[id] = id;
             //alert("id=" + window.localStorage[id]);
-        } else
-        {
+        } else {
             window.localStorage.removeItem(id);
         }
         window.localStorage["usedWBADtag"] = "USED";//记录下用户已经使用过
     });
-    $("#btnDefault").bind("click", function (event, ui)
-    {
+    $("#btnDefault").bind("click", function (event, ui) {
         init("btnDefault");
         loadProfile();
         history.back();
     });
-    $("#Box_right").bind("click", function (event, ui)
-    {
-        if ($(this).attr("checked") == "checked")
-        {//勾选本项，其他项目失效
+    $("#Box_right").bind("click", function (event, ui) {
+        if ($(this).attr("checked") == "checked") {//勾选本项，其他项目失效
             window.localStorage["Box_right"] = "Box_right";
             $("#mainWb,#myWb,#xxxxWb,#oldver").find("input[type='checkbox']").checkboxradio('disable').checkboxradio("refresh");
             $("#Box_right").attr("checked", true).checkboxradio("refresh");
-        } else
-        {
+        } else {
             window.localStorage.removeItem("Box_right");
             $("#mainWb,#myWb,#xxxxWb,#oldver").find("input[type='checkbox']").checkboxradio('enable').checkboxradio("refresh");
             $("#Box_right").attr("checked", false).checkboxradio("refresh");
@@ -182,55 +143,43 @@
         $("#Box_right").checkboxradio('enable').checkboxradio("refresh");
         window.localStorage["usedWBADtag"] = "USED";//记录下用户已经使用过
     });
-    $("#photo_style input[type='radio']").bind("click", function (event, ui)
-    {
+    $("#photo_style input[type='radio']").bind("click", function (event, ui) {
         var stylevalue = $(this).attr("value");
-        if ($(this).attr("checked") == "checked")
-        {
+        if ($(this).attr("checked") == "checked") {
             window.localStorage["photostyle"] = stylevalue;
-        } else
-        {
+        } else {
             window.localStorage.removeItem(stylevalue);
         }
         window.localStorage["usedWBADtag"] = "USED";//记录下用户已经使用过
     });
-    $("#collsett input[type='radio']").bind("click", function (event, ui)
-    {
+    $("#collsett input[type='radio']").bind("click", function (event, ui) {
         var colorvalue = $(this).attr("value");
-        if ($(this).attr("checked") == "checked")
-        {
+        if ($(this).attr("checked") == "checked") {
             window.localStorage["colorvalue"] = colorvalue;
         }
-        else
-        {
+        else {
             window.localStorage.removeItem(colorvalue);
         }
         window.localStorage["usedWBADtag"] = "USED";//记录下用户已经使用过
     });
-    $("#infosett input[type='radio']").bind("click", function (event, ui)
-    {
+    $("#infosett input[type='radio']").bind("click", function (event, ui) {
         var colorvalue = $(this).attr("value");
-        if ($(this).attr("checked") == "checked")
-        {
+        if ($(this).attr("checked") == "checked") {
             window.localStorage["showOrDelWBADInfo"] = colorvalue;
-        } else
-        {
+        } else {
             window.localStorage.removeItem(colorvalue);
         }
 
-        if (colorvalue == "showWBAD")
-        {
+        if (colorvalue == "showWBAD") {
             $("#collsett input[type='radio']").checkboxradio('enable').checkboxradio("refresh");
-        } else if (colorvalue == "deleteWBAD")
-        {
+        } else if (colorvalue == "deleteWBAD") {
             $("#collsett input[type='radio']").checkboxradio('disable').checkboxradio("refresh");
         }
         window.localStorage["usedWBADtag"] = "USED";//记录下用户已经使用过
         //选中：$("input[type='checkbox']").attr("checked", true).checkboxradio("refresh");
         //不选：$("input[type='checkbox']").attr("checked", false).checkboxradio("refresh");
     });
-    $("textarea").bind("blur", function (event, ui)
-    {
+    $("textarea").bind("blur", function (event, ui) {
         var id = $(this).attr("id");
         var val = $(this).val();
         window.localStorage[id] = val;

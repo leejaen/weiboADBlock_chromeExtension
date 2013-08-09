@@ -1,19 +1,13 @@
-﻿(function ()
-{
+﻿(function () {
     chrome.browserAction.setIcon({ path: "img/icon0.png" });//切换图标
-    setTimeout(function ()
-    {
+    setTimeout(function () {
         var hasWB = false;
-        chrome.tabs.getSelected(function (selectedTab)
-        {
+        chrome.tabs.getSelected(function (selectedTab) {
             // Retrieves all tabs
-            chrome.tabs.getAllInWindow(function (tabs)
-            {
-                for (var i = 0; i < tabs.length; i++)
-                {
+            chrome.tabs.getAllInWindow(function (tabs) {
+                for (var i = 0; i < tabs.length; i++) {
                     // Excludes selected and loaded tabs
-                    if (tabs[i].id !== selectedTab.id && tabs[i].url.lastIndexOf("weibo.com"))
-                    {
+                    if (tabs[i].id !== selectedTab.id && tabs[i].url.lastIndexOf("weibo.com")) {
                         hasWB = true;
                         break;
                     }
@@ -21,55 +15,42 @@
             });
         });
 
-        if (hasWB == true)
-        {
+        if (hasWB == true) {
             chrome.browserAction.setIcon({ path: "img/icon.png" });//切换图标
         }
     }, 10000);
 })();
-var updateWBADIcon = function (number, STATE)
-{
+var updateWBADIcon = function (number, STATE) {
     var html = "";
-    if (number == 0)
-    {
+    if (number == 0) {
         number = "";
     }
-    if (STATE)
-    {//hidden
+    if (STATE) {//hidden
         chrome.browserAction.setIcon({ path: "img/icon0.png" });//切换图标
-    } else
-    {
+    } else {
         chrome.browserAction.setIcon({ path: "img/icon.png" });//切换图标
     }
     chrome.browserAction.setBadgeText({ text: String(number) });//提示透明度文字
 }
 
-chrome.extension.onRequest.addListener(function (request, sender, sendResponse)
-{//返回请求数据
-    //console.log("state="+state);
-    //console.log(request.method + "      " + request.number);
-    if (request.method == "setWBADicon")
-    {
-        //console.log("STATE="+STATE);
+chrome.extension.onRequest.addListener(function (request, sender, sendResponse) {//返回请求数据
+    if (request.method == "setWBADicon") {
         var counter = request.number;
         var STATE = request.STATE;
         updateWBADIcon(counter, STATE);
         sendResponse({});
     }
-    if (request.method == "getWBADsmurf")
-    {
+    if (request.method == "getWBADsmurf") {
         var smurfs = "$这条微博没有节操,推广来自,微博推广,来自粉丝头条,精彩微博推荐,";//这种肯定是广告
         var htmlKey = "taobao.com,sinaapp.com,wby.so,url.com,.feitao,emop.cn,pianke.me,tmall.com,taourl.com,51fanli.com,immomo.com,kktalk.com,renrentuan.,zhubajie.com,taoppp.com,weiqc.com,xigouq00.com,wqc.so,likeface.com,event.video.sina.com,event.weibo.com,apps.weibo.com,badge.weibo.com,ua.yesweibo.com,wyht.so,dlj.so,qoo10.cn,weiligongshe.com,fanlibang.com,h2w.iask.cn,acs.56.com,lcpinai.com,lijitui.com,popular_buss,W_no_border,feed_spread_contain,";//默认2013年1月16日17:28:25删除kan.weibo.com,2013年2月17日9:44:37删除vdisk.weibo.comW_no_border,W_no_border:好友关注
-		//feed_spread_contain 屏蔽好友关注微博，有此内容的为此类微博
+        //feed_spread_contain 屏蔽好友关注微博，有此内容的为此类微博
         var sectionKey = "#pl_content_biztips,div[ad-data],*[node-type^='ad'],.promotion_twist,div[feedtype='ad'],";//默认顶部（发布框下方）广告,下部广告(a[suda-uatrack],),v3.6一样
         var keyWord = "", exKeyword = "", others = "", Box_right = "";//, photostyle = "";
-        for (var i = 0; i < window.localStorage.length; i++)
-        {
+        for (var i = 0; i < window.localStorage.length; i++) {
             var key = window.localStorage.key(i);
             var value = window.localStorage.getItem(key);
 
-            switch (key)
-            {
+            switch (key) {
                 //自定义关键字
                 case "keyword":
                     keyWord = value;
@@ -79,7 +60,7 @@ chrome.extension.onRequest.addListener(function (request, sender, sendResponse)
                     break;
                     //微博广告
                 case "awardRetweet"://有奖转发
-                    smurfs += "$抽奖的、转发的都是骗子,中奖,奖地址,大奖,仅售,精美礼,奖品,礼品,赢多项奖品,就有机会,有机会获得,幸运粉丝,有奖转发,转发并,的请转发,内转发,同意的转,转发有奖,转发本微博,转发此微博,评论本微博,@3位,@5位,@3名,@5名,好礼,";
+                    smurfs += "$抽奖转发的都是骗子,中奖,奖地址,大奖,仅售,精美礼,奖品,礼品,赢多项奖品,就有机会,有机会获得,幸运粉丝,有奖转发,转发并,的请转发,内转发,同意的转,转发有奖,转发本微博,转发此微博,评论本微博,@3位,@5位,@3名,@5名,好礼,";
                     break;
                 case "recommendedFollowing"://推荐关注
                     smurfs += "$臭不要脸求关注,关注@,推荐@,快来@,终于有人开通,推荐关注,轻松关注,推荐给大家,必须关注,强烈推荐,关注下,喜欢这个微博,喜欢这个帐号,";
@@ -88,7 +69,7 @@ chrome.extension.onRequest.addListener(function (request, sender, sendResponse)
                     smurfs += "$好友关注,也关注TA,";
                     break;
                 case "promotionalAD"://促销广告
-                    smurfs += "$促销广告秀下限,地址：t.cn,周年庆,UGG,爆促销,包邮,卖疯了,详情请点击,全网最低,假一赔,可享受,可免费,免费获,数量有限,可以享受,除痘,正品,到货啦,痘痘,发售,还不赶紧,折起售,优惠！,1折,2折,3折,5折,9折,猪油膏,祛痘,起拍,小肚腩,去黑头,贵宾专线,贵宾热线,";
+                    smurfs += "$无耻广告秀下限,地址：t.cn,元起,请点击,大促,周年庆,UGG,爆促销,包邮,卖疯了,详情请点击,全网最低,假一赔,可享受,可免费,免费获,数量有限,可以享受,除痘,正品,到货啦,痘痘,发售,还不赶紧,折起售,优惠！,1折,2折,3折,5折,9折,猪油膏,祛痘,起拍,小肚腩,去黑头,贵宾专线,贵宾热线,";
                     break;
                 case "micromsg"://微信推广
                     smurfs += "$微信推广,微信里也有,微信号,扫描二维码,";
@@ -100,20 +81,12 @@ chrome.extension.onRequest.addListener(function (request, sender, sendResponse)
                     smurfs += "$返利网推广,返利网,省下更多,";
                     break;
                 case "invalidWB"://无效微博
-                    smurfs += "$可怜的娃儿又被和谐了,此微博已被作者删除,此微博已被删除,此微博不适宜对外公开,";
+                    smurfs += "$可怜的娃儿被和谐了,此微博已被作者删除,此微博已被删除,此微博不适宜对外公开,";
                     break;
                     //其他设置
                 case "exSelf":
                     others += value + ",";
                     break;
-                    //case "photostyle":
-                    //    photostyle += value + ",";
-                    //    break;
-                    ////其他设置
-                    //case "moreList":
-                    //    moreList += value + ",";
-                    //    break;
-                    //板块广告
                 case "feed_list_recommend"://屏蔽精彩内容推荐微博
                     sectionKey += ".WB_feed div[node-type='feed_list_recommend'],";
                     break;
@@ -162,9 +135,6 @@ chrome.extension.onRequest.addListener(function (request, sender, sendResponse)
                 case "help"://玩转微博/帮助
                     sectionKey += "#pl_rightmod_help,";
                     break;
-                    //case "Box_right"://微博详细内容页右侧所有内容
-                    //    Box_right += "#Box_right,";
-                    //    break;
                 case "moduleMyRelation"://我的关注和粉丝
                     sectionKey += "#pl_profile_moduleMyRelation,";
                     break;
@@ -230,8 +200,7 @@ chrome.extension.onRequest.addListener(function (request, sender, sendResponse)
             }
         }
 
-        if (keyWord.lastIndexOf(",") == keyWord.length - 1)
-        {
+        if (keyWord.lastIndexOf(",") == keyWord.length - 1) {
             keyWord = keyWord.substring(0, keyWord.length - 1);
         }
         sendResponse({
@@ -247,30 +216,23 @@ chrome.extension.onRequest.addListener(function (request, sender, sendResponse)
             , moreList: window.localStorage["moreList"]//自动展开左侧所有分组
             , Box_right: window.localStorage["Box_right"]//显示屏蔽微博设置(已关注微博所有的列表)
             , superScrolling: window.localStorage["superScrolling"]//超级滚动
-            , superGallery: window.localStorage["superGallery"]//微博画廊
             , noforward: window.localStorage["noforward"]//同时转发到我的微博
         });
     }
 });
 
-chrome.tabs.onRemoved.addListener(function ()
-{
+chrome.tabs.onRemoved.addListener(function () {
     chrome.browserAction.setIcon({ path: "img/icon0.png" });//切换图标
     chrome.browserAction.setBadgeText({ text: String("") });//提示透明度文字
 });//添加监听事件
-chrome.tabs.onCreated.addListener(function ()
-{
+chrome.tabs.onCreated.addListener(function () {
     var hasWB = false;
-    chrome.tabs.getSelected(function (selectedTab)
-    {
+    chrome.tabs.getSelected(function (selectedTab) {
         // Retrieves all tabs
-        chrome.tabs.getAllInWindow(function (tabs)
-        {
-            for (var i = 0; i < tabs.length; i++)
-            {
+        chrome.tabs.getAllInWindow(function (tabs) {
+            for (var i = 0; i < tabs.length; i++) {
                 // Excludes selected and loaded tabs
-                if (tabs[i].id !== selectedTab.id && tabs[i].url.lastIndexOf("weibo.com"))
-                {
+                if (tabs[i].id !== selectedTab.id && tabs[i].url.lastIndexOf("weibo.com")) {
                     hasWB = true;
                     break;
                 }
@@ -278,8 +240,7 @@ chrome.tabs.onCreated.addListener(function ()
         });
     });
 
-    if (hasWB == true)
-    {
+    if (hasWB == true) {
         chrome.browserAction.setIcon({ path: "img/icon.png" });//切换图标
     }
 });//添加监听事件
