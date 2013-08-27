@@ -37,8 +37,8 @@
         window.localStorage["photo"] = "photo";
         window.localStorage["photostyle"] = "photo_default";
         window.localStorage["pl_profile_giftBox"] = "pl_profile_giftBox";
-        window.localStorage["pl_profile_hisGiftBox"] = "pl_profile_hisGiftBox";
-        window.localStorage["pl_profile_unfollow"] = "pl_profile_unfollow";
+        window.localStorage["Pl_Core_RightUserGrid__7"] = "Pl_Core_RightUserGrid__7";
+        window.localStorage["Pl_Core_RightPicMulti__8"] = "Pl_Core_RightPicMulti__8";
         window.localStorage["promotionalAD"] = "promotionalAD";
         window.localStorage["rebate"] = "rebate";
         window.localStorage["recomendedkan"] = "recomendedkan";

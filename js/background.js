@@ -87,6 +87,44 @@ chrome.extension.onRequest.addListener(function (request, sender, sendResponse) 
                 case "exSelf":
                     others += value + ",";
                     break;
+					
+                case "Pl_Core_RightUserGrid__7"://关注/粉丝、微关系
+                    sectionKey += "#Pl_Core_RightUserGrid__7,";
+                    break;
+                case "Pl_Core_RightPicMulti__8"://微相册
+                    sectionKey += "#Pl_Core_RightPicMulti__8,";
+                    break;
+                case "Pl_Third_Inline__29"://相关推荐
+                    sectionKey += "#Pl_Third_Inline__29,";
+                    break;
+                case "Pl_Core_RightTextSingle__11"://话题
+                    sectionKey += "#Pl_Core_RightTextSingle__11,";
+                    break;
+                case "Pl_Core_LeftPicText__5"://赞过
+                    sectionKey += "#Pl_Core_LeftPicText__5,";
+                    break;
+                case "Pl_Core_RightPicText__12"://热门微博
+                    sectionKey += "#Pl_Core_RightPicText__12,";
+                    break;
+                case "Pl_Core_RightRank__36"://最赞榜（赞）
+                    sectionKey += "#Pl_Core_RightRank__36,";
+                    break;
+                case "Pl_Core_RightRank__23"://最赞榜（音乐）
+                    sectionKey += "#Pl_Core_RightRank__23,";
+                    break;
+                case "Pl_Core_RightRank__37"://分类榜单
+                    sectionKey += "#Pl_Core_RightRank__37,";
+                    break;
+                case "Pl_Core_RightRank__27"://分类榜单（读书）
+                    sectionKey += "#Pl_Core_RightRank__27,";
+                    break;
+                case "Pl_Core_RightRank__20"://可能感兴趣的地方
+                    sectionKey += "#Pl_Core_RightRank__20,";
+                    break;
+                case "Pl_Core_RightUserList__21"://可能感兴趣的用户
+                    sectionKey += "#Pl_Core_RightUserList__21,";
+                    break;
+					
                 case "feed_list_recommend"://屏蔽精彩内容推荐微博
                     sectionKey += ".WB_feed div[node-type='feed_list_recommend'],";
                     break;
