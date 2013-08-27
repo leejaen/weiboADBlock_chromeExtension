@@ -99,6 +99,9 @@ chrome.extension.onRequest.addListener(function (request, sender, sendResponse) 
                 case "interest"://可能感兴趣的人
                     sectionKey += "#trustPagelet_indexright_recom>div:eq(1)>div:eq(1),#trustPagelet_recom_interestv5,#trustPagelete_recom_interest";
                     break;
+                case "weiborecom"://微吧推荐
+                    sectionKey += "#trustPagelet_indexright_recom>div:eq(1)>div:eq(2),";
+                    break;
                 case "zone"://会员专区会员动态
                     sectionKey += "#trustPagelet_recom_memberv5,#trustPagelet_member_zone,";
                     break;
@@ -163,7 +166,7 @@ chrome.extension.onRequest.addListener(function (request, sender, sendResponse) 
                     sectionKey += "#trustPagelet_mblog_hotmblog,";
                     break;
                 case "weiba"://微博详细内容页推荐微吧
-                    sectionKey += "#trustPagelet_indexright_recom>div:eq(1)>div:eq(2),#trustPagelet_mblog_weiba,";
+                    sectionKey += "#trustPagelet_mblog_weiba,";
                     break;
                 case "photo"://微博详细内容页推荐图片
                     sectionKey += "#trustPagelet_mblog_photo,";

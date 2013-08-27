@@ -23,6 +23,7 @@
         window.localStorage["help"] = "help";
         window.localStorage["hotmblog"] = "hotmblog";
         window.localStorage["interest"] = "interest";
+        window.localStorage["weiborecom"] = "weiborecom";
         window.localStorage["invalidWB"] = "invalidWB";
         window.localStorage["invite"] = "invite";
         window.localStorage["keyword"] = "$星座,星座,白羊座,金牛座,双子座,巨蟹,狮子座,处女座,天秤,天蝎,射手座,摩羯,水瓶座,双鱼座,$SB广告,姐妹们,鸡皮肤,$广告大主臭不要脸,上海煜宸,梦享家,欧尚坊,shopbop,大众点评客户端,谷卡名车广场,im8官网微博,折企业网站微博,上海麦丹,竹叶青茶,八客网,嫁伊,八阵电商,返利网-海淘返利,麦开网,沪江网外语学习,橡果国际旗舰店,返利网粉丝论坛,591结婚网,返利网淘宝返利,柏菲娜,捷贝网络,史泰博中国,优娅化妆品销售部,爱上淘创意,";
