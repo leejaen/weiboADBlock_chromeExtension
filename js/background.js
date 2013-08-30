@@ -97,6 +97,9 @@ chrome.extension.onRequest.addListener(function (request, sender, sendResponse) 
                 case "Pl_Third_Inline__29"://相关推荐
                     sectionKey += "#Pl_Third_Inline__29,";
                     break;
+                case "Pl_Third_Inline__30"://相关推荐
+                    sectionKey += "#Pl_Third_Inline__30,";
+                    break;
                 case "Pl_Core_RightTextSingle__11"://话题
                     sectionKey += "#Pl_Core_RightTextSingle__11,";
                     break;
