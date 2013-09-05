@@ -91,6 +91,11 @@
                                 简洁模式（屏蔽右边栏所有内容）<br />
                                 <span style="font-size: 10px; font-weight: normal; color: #AAA;">右侧所有信息将不予显示</span>
                             </label>
+                            <input id="all__" name="" type="checkbox" value="all__" data-theme="c">
+                            <label for="all__" title="屏蔽除基本信息、列表以外所有附加板块">
+                                智能屏蔽（屏蔽所有附加内容）<br />
+                                <span style="font-size: 10px; font-weight: normal; color: #AAA;">屏蔽所有附加板块</span>
+                            </label>
                         </fieldset>
                         <br />
                         <fieldset id="mainWb" data-role="controlgroup" data-type="vertical" data-mini="true">
@@ -152,10 +157,6 @@
                         <br />
                         我的微博（个人页面）：
                         <fieldset id="myWb" data-role="controlgroup" data-type="vertical" data-mini="true">
-                            <!--<input id="W_main_2r" name="" type="checkbox" data-theme="e">
-                            <label for="W_main_2r" title="同时用详细列表补占空位">
-                                右侧所有内容
-                            </label>-->
                             <input id="Pl_Core_RightUserGrid__7" name="" type="checkbox" data-theme="e">
                             <label for="Pl_Core_RightUserGrid__7">
                                 关注/粉丝、微关系
@@ -164,42 +165,45 @@
                             <label for="Pl_Core_RightPicMulti__8">
                                 微相册
                             </label>
-                            <input id="pl_profile_giftBox" name="" type="checkbox" data-theme="e">
-                            <label for="pl_profile_giftBox">
-                                我的礼物盒
+                            <input id="Pl_Core_RightTextSingle__12" name="" type="checkbox" data-theme="e">
+                            <label for="Pl_Core_RightTextSingle__12">
+                                话题
                             </label>
-                            <input id="moduleMyRelation" name="" type="checkbox" data-theme="e">
-                            <label for="moduleMyRelation">
-                                我的关注和粉丝
+                            <input id="Pl_Core_RightPicText__13" name="" type="checkbox" data-theme="e">
+                            <label for="Pl_Core_RightPicText__13">
+                                热门微博
                             </label>
-                            <input id="trustPagelet_profile_openApplist" name="" type="checkbox" data-theme="e">
-                            <label for="trustPagelet_profile_openApplist">
-                                开启应用卡片 记录你的互联网生活
+                            <input id="Pl_Official_RightGrow__15" name="" type="checkbox" data-theme="e">
+                            <label for="Pl_Official_RightGrow__15">
+                                勋章信息
+                            </label>
+                            <input id="Pl_Core_RightRank__21" name="" type="checkbox" data-theme="e">
+                            <label for="Pl_Core_RightRank__21">
+                                可能感兴趣的地方
+                            </label>
+                            <input id="Pl_Core_RightRank__24" name="" type="checkbox" data-theme="e">
+                            <label for="Pl_Core_RightRank__24">
+                                最赞榜（音乐标签）
+                            </label>
+                            <input id="Pl_Core_RightRank__40" name="" type="checkbox" data-theme="e">
+                            <label for="Pl_Core_RightRank__40">
+                                正在热映（电影标签）
                             </label>
                         </fieldset>
                         <br />
                         XXXX的微博（微博详细内容页）：
                         <fieldset id="xxxxWb" data-role="controlgroup" data-type="vertical" data-mini="true">
-                            
-                            <!--<input id="Pl_Core_LeftPicText__4" name="" type="checkbox" data-theme="c">
-                            <label for="Pl_Core_LeftPicText__4">
-                                
-                            </label>-->
 								<input id="Pl_Core_LeftPicText__5" name="" type="checkbox" data-theme="c">
                             <label for="Pl_Core_LeftPicText__5">
                                 赞过
                             </label>
-                            <!--<input id="Pl_Core_LeftPicText__6" name="" type="checkbox" data-theme="c">
-                            <label for="Pl_Core_LeftPicText__6">
-                                
-                            </label>-->
-                            <input id="Pl_Third_Inline__29" name="" type="checkbox" data-theme="c">
-                            <label for="Pl_Third_Inline__29">
-                                相关推荐
+								<input id="Pl_Core_RightUserGrid__8" name="" type="checkbox" data-theme="c">
+                            <label for="Pl_Core_RightUserGrid__8">
+                                微关系（我们之间的共同关系）
                             </label>
-                            <input id="Pl_Third_Inline__30" name="" type="checkbox" data-theme="c">
-                            <label for="Pl_Third_Inline__30">
-                                相关推荐(推荐给你更多更新更好的资讯)
+								<input id="Pl_Core_RightPicMulti__9" name="" type="checkbox" data-theme="c">
+                            <label for="Pl_Core_RightPicMulti__9">
+                                微相册
                             </label>
                             <input id="Pl_Core_RightTextSingle__11" name="" type="checkbox" data-theme="c">
                             <label for="Pl_Core_RightTextSingle__11">
@@ -209,22 +213,6 @@
                             <label for="Pl_Core_RightPicText__12">
                                 热门微博
                             </label>
-                            <input id="Pl_Core_RightRank__36" name="" type="checkbox" data-theme="c">
-                            <label for="Pl_Core_RightRank__36">
-                                最赞榜（赞）
-                            </label>
-                            <input id="Pl_Core_RightRank__23" name="" type="checkbox" data-theme="c">
-                            <label for="Pl_Core_RightRank__23">
-                                最赞榜（音乐）
-                            </label>
-                            <input id="Pl_Core_RightRank__37" name="" type="checkbox" data-theme="c">
-                            <label for="Pl_Core_RightRank__37">
-                                分类榜单
-                            </label>
-                            <input id="Pl_Core_RightRank__27" name="" type="checkbox" data-theme="c">
-                            <label for="Pl_Core_RightRank__27">
-                                分类榜单（读书）
-                            </label>
                             <input id="Pl_Core_RightRank__20" name="" type="checkbox" data-theme="c">
                             <label for="Pl_Core_RightRank__20">
                                 可能感兴趣的地方
@@ -232,52 +220,151 @@
                             <input id="Pl_Core_RightUserList__21" name="" type="checkbox" data-theme="c">
                             <label for="Pl_Core_RightUserList__21">
                                 可能感兴趣的用户
-                            </label><!--
-                            <input id="photo" name="" type="checkbox" data-theme="c">
-                            <label for="photo">
-                                推荐图片
                             </label>
-                            <input id="music" name="" type="checkbox" data-theme="c">
-                            <label for="music">
-                                推荐音乐
+                            <input id="Pl_Core_RightRank__23" name="" type="checkbox" data-theme="c">
+                            <label for="Pl_Core_RightRank__23">
+                                最赞榜（音乐标签）
                             </label>
-                            <input id="recommblog" name="" type="checkbox" data-theme="c">
-                            <label for="recommblog">
-                                推荐微博
+                            <input id="Pl_Core_RightRank__27" name="" type="checkbox" data-theme="c">
+                            <label for="Pl_Core_RightRank__27">
+                                分类榜单（读书标签）
                             </label>
-                            <input id="topic" name="" type="checkbox" data-theme="c">
-                            <label for="topic">
-                                推荐话题
+                            <input id="Pl_Third_Inline__29" name="" type="checkbox" data-theme="c">
+                            <label for="Pl_Third_Inline__29">
+                                相关推荐
                             </label>
-                            <input id="recomperson" name="" type="checkbox" data-theme="c">
-                            <label for="recomperson">
-                                推荐关注
-                            </label>-->
+                            <input id="Pl_Third_Inline__30" name="" type="checkbox" data-theme="c">
+                            <label for="Pl_Third_Inline__30">
+                                相关推荐(推荐给你更多更新更好的资讯)
+                            </label>
+                            <input id="Pl_Core_RightRank__36" name="" type="checkbox" data-theme="c">
+                            <label for="Pl_Core_RightRank__36">
+                                最赞榜（赞标签）
+                            </label>
+                            <input id="Pl_Core_RightRank__37" name="" type="checkbox" data-theme="c">
+                            <label for="Pl_Core_RightRank__37">
+                                分类榜单/最赞榜(我的微博)
+                            </label>
+                        </fieldset>
+                        <br />
+                        企业微博（蓝色大V微博详细内容页）：
+                        <fieldset id="etprsWb" data-role="controlgroup" data-type="vertical" data-mini="true">
+                            
+								<input id="Pl_Core_RightUserGrid__14" name="" type="checkbox" data-theme="e">
+                            <label for="Pl_Core_RightUserGrid__14">
+                                媒体矩阵
+                            </label>
+								<input id="Pl_Core_RightTextMulti__15" name="" type="checkbox" data-theme="e">
+                            <label for="Pl_Core_RightTextMulti__15">
+                                媒体标签
+                            </label>
+								<input id="Pl_Core_RightTextMulti__16" name="" type="checkbox" data-theme="e">
+                            <label for="Pl_Core_RightTextMulti__16">
+                                友情链接
+                            </label>
+								<input id="Pl_Core_RightRank__17" name="" type="checkbox" data-theme="e">
+                            <label for="Pl_Core_RightRank__17">
+                                预留广告位1
+                            </label>
+								<input id="Pl_Core_RightPicText__18" name="" type="checkbox" data-theme="e">
+                            <label for="Pl_Core_RightPicText__18">
+                                推荐文章
+                            </label>
+								<input id="Pl_Core_RightPicMulti__19" name="" type="checkbox" data-theme="e">
+                            <label for="Pl_Core_RightPicMulti__19">
+                                预留广告位3
+                            </label>
+								<input id="Pl_Core_RightTextSingle__20" name="" type="checkbox" data-theme="e">
+                            <label for="Pl_Core_RightTextSingle__20">
+                                话题
+                            </label>
+								<input id="Pl_Core_UserGuide__21" name="" type="checkbox" data-theme="e">
+                            <label for="Pl_Core_UserGuide__21">
+                                预留广告位4
+                            </label>
+							
+								<input id="pl_content_links" name="" type="checkbox" data-theme="c">
+                            <label for="pl_content_links">
+                                友情链接（旧版）
+                            </label>
+								<input id="pl_leftNav_profilePersonal" name="" type="checkbox" data-theme="c">
+                            <label for="pl_leftNav_profilePersonal">
+                                头像区（旧版）
+                            </label>
+								<input id="pl_leftNav_profileContent" name="" type="checkbox" data-theme="c">
+                            <label for="pl_leftNav_profileContent">
+                                导航栏（旧版）
+                            </label>
+								<input id="pl_content_contact" name="" type="checkbox" data-theme="c">
+                            <label for="pl_content_contact">
+                                联系方式（旧版）
+                            </label>
+								<input id="pl_content_noticeBoard" name="" type="checkbox" data-theme="c">
+                            <label for="pl_content_noticeBoard">
+                                公告栏（旧版）
+                            </label>
+							
+								<input id="pl_common_relations" name="" type="checkbox" data-theme="e">
+                            <label for="pl_common_relations">
+                                我们的微关系
+                            </label>
+								<input id="widget_subscribe_pl_subscribe" name="" type="checkbox" data-theme="e">
+                            <label for="widget_subscribe_pl_subscribe">
+                                VIP特权
+                            </label>
+								<input id="pl_share_assistant" name="" type="checkbox" data-theme="e">
+                            <label for="pl_share_assistant">
+                                助手板块/微客服
+                            </label>
+								<input id="pl_content_leaders" name="" type="checkbox" data-theme="e">
+                            <label for="pl_content_leaders">
+                                领导版块/创始人/推荐微博
+                            </label>
+								<input id="pl_content_subbrands" name="" type="checkbox" data-theme="e">
+                            <label for="pl_content_subbrands">
+                                部门版块/子部门
+                            </label>
+								<input id="widget_myfans_pl_myfans" name="" type="checkbox" data-theme="e">
+                            <label for="widget_myfans_pl_myfans">
+                                他的粉丝
+                            </label>
+								<input id="pl_content_staffs" name="" type="checkbox" data-theme="e">
+                            <label for="pl_content_staffs">
+                                员工版块/工作人员
+                            </label>
+								<input id="pl_content_tags" name="" type="checkbox" data-theme="e">
+                            <label for="pl_content_tags">
+                                自定义标签/企业标签
+                            </label>
+								<input id="pl_common_feedback" name="" type="checkbox" data-theme="e">
+                            <label for="pl_common_feedback">
+                                意见反馈/企业帮助
+                            </label>
                         </fieldset>
                         <br />
                         旧版微博（3.6）：
                         <fieldset id="oldver" data-role="controlgroup" data-type="vertical" data-mini="true">
-                            <input id="help" name="" type="checkbox" data-theme="e">
+                            <input id="help" name="" type="checkbox" data-theme="c">
                             <label for="help">
                                 玩转微博/帮助
                             </label>
-                            <input id="medal" name="" type="checkbox" data-theme="e">
+                            <input id="medal" name="" type="checkbox" data-theme="c">
                             <label for="medal">
                                 勋章
                             </label>
-                            <input id="invite" name="" type="checkbox" data-theme="e">
+                            <input id="invite" name="" type="checkbox" data-theme="c">
                             <label for="invite">
                                 邀请
                             </label>
-                            <input id="mood" name="" type="checkbox" data-theme="e">
+                            <input id="mood" name="" type="checkbox" data-theme="c">
                             <label for="mood">
                                 心情
                             </label>
-                            <input id="checkin" name="" type="checkbox" data-theme="e">
+                            <input id="checkin" name="" type="checkbox" data-theme="c">
                             <label for="checkin">
                                 签到
                             </label>
-                            <input id="oldUser" name="" type="checkbox" data-theme="e">
+                            <input id="oldUser" name="" type="checkbox" data-theme="c">
                             <label for="oldUser">
                                 微博精选、Qing推荐等旧版推广
                             </label>

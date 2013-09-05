@@ -35,6 +35,7 @@
             isManualCheck: false
         }
         , Box_right: ""
+        , all__: ""
         , W_main_2r: ""
 
         , hideTimeout: null
@@ -85,10 +86,12 @@
         infos.superScrolling = response.superScrolling;
         infos.noforward = response.noforward;
         infos.Box_right = response.Box_right;
+        infos.all__ = response.all__;
         infos.sectionKey = response.sectionKey;
         infos.funTimeout = setTimeout(function () {//修复页面首次载入没有应用设置的效果
             moreList();
             hideBorder();
+            hideAll__();
             $(infos.sectionKey).remove();
             if (infos.superScrolling != null && infos.superScrolling != undefined && infos.superScrolling != "") {
                 $(infos.eachWBselector).first().addClass("currWB");
@@ -128,6 +131,7 @@
             }, 1010);
             moreList();
             hideBorder();
+			hideAll__();
             $(infos.sectionKey).remove();
             var allItems = $(infos.WBselector).children();//所有微博div
             if (allItems.length > infos.counter) {//有新内容
@@ -199,6 +203,25 @@
         var url = window.location.toString();
         return (url.lastIndexOf(name) >= 0)
     }
+	function hideAll__(){
+		if(infos.all__ != null && infos.all__ != undefined && infos.all__ != ""){//隐藏所有附加信息板块
+			var $test=$("div[id*='__']");
+			for(var i=0;i<$test.length;i++){
+				var id=$test.eq(i).attr("id");
+				if(id!="Pl_Official_Header__1"&&id!="Pl_Core_Nav__2"//页头
+				&&id!="Pl_Core_OwnerFeed__3"//他的主页
+				&&id!="Pl_Official_LeftProfileFeedNav__10"&&id!="Pl_Official_LeftProfileFeed__11"//微博
+				&&id!="Pl_Official_LeftInfo__14"//个人资料
+				&&id!="Pl_Official_LeftHisRelation__16"//关注/粉丝
+				&&id!="Pl_Third_Inline__18"&&id!="Pl_Third_Inline__19"//相册
+				&&id!="Pl_Core_LeftPic__32"&&id!="Pl_Core_LeftPic__33"//赞
+				&&id!="Pl_Official_LeftWeiboDetail__28"//某微博详细页面的微博详情
+				){
+					$test.eq(i).hide();
+				}
+			}
+		}
+	}
     function hideBorder() {
         if (infos.Box_right != null && infos.Box_right != undefined && infos.Box_right != "") {//隐藏右侧
             //微博主页

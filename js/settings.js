@@ -37,8 +37,6 @@
         window.localStorage["photo"] = "photo";
         window.localStorage["photostyle"] = "photo_default";
         window.localStorage["pl_profile_giftBox"] = "pl_profile_giftBox";
-        window.localStorage["Pl_Core_RightUserGrid__7"] = "Pl_Core_RightUserGrid__7";
-        window.localStorage["Pl_Core_RightPicMulti__8"] = "Pl_Core_RightPicMulti__8";
         window.localStorage["promotionalAD"] = "promotionalAD";
         window.localStorage["rebate"] = "rebate";
         window.localStorage["recomendedkan"] = "recomendedkan";
@@ -51,6 +49,54 @@
         window.localStorage["trustPagelet_profile_openApplist"] = "trustPagelet_profile_openApplist";
         window.localStorage["weiba"] = "weiba";
         window.localStorage["zone"] = "zone";
+		
+		//我的微博（个人页面）
+        window.localStorage["Pl_Core_RightUserGrid__7"] = "Pl_Core_RightUserGrid__7";//关注/粉丝、微关系
+        window.localStorage["Pl_Core_RightPicMulti__8"] = "Pl_Core_RightPicMulti__8";//微相册
+        window.localStorage["Pl_Core_RightTextSingle__12"] = "Pl_Core_RightTextSingle__12";//话题
+        window.localStorage["Pl_Core_RightPicText__13"] = "Pl_Core_RightPicText__13";//热门微博
+        window.localStorage["Pl_Official_RightGrow__15"] = "Pl_Official_RightGrow__15";//勋章信息
+        window.localStorage["Pl_Core_RightRank__21"] = "Pl_Core_RightRank__21";//可能感兴趣的地方
+        window.localStorage["Pl_Core_RightRank__24"] = "Pl_Core_RightRank__24";//最赞榜（音乐标签）
+        window.localStorage["Pl_Core_RightRank__40"] = "Pl_Core_RightRank__40";//正在热映（电影标签）
+		
+		//XXXX的微博（微博详细内容页）
+        window.localStorage["Pl_Core_LeftPicText__5"] = "Pl_Core_LeftPicText__5";//赞过
+        window.localStorage["Pl_Core_RightUserGrid__8"] = "Pl_Core_RightUserGrid__8";//微关系（我们之间的共同关系）
+        window.localStorage["Pl_Core_RightPicMulti__9"] = "Pl_Core_RightPicMulti__9";//微相册
+        window.localStorage["Pl_Core_RightTextSingle__11"] = "Pl_Core_RightTextSingle__11";//话题
+        window.localStorage["Pl_Core_RightPicText__12"] = "Pl_Core_RightPicText__12";//热门微博
+        window.localStorage["Pl_Core_RightRank__20"] = "Pl_Core_RightRank__20";//可能感兴趣的地方
+        window.localStorage["Pl_Core_RightUserList__21"] = "Pl_Core_RightUserList__21";//可能感兴趣的用户
+        window.localStorage["Pl_Core_RightRank__23"] = "Pl_Core_RightRank__23";//最赞榜（音乐标签）
+        window.localStorage["Pl_Core_RightRank__27"] = "Pl_Core_RightRank__27";//分类榜单（读书标签）
+        window.localStorage["Pl_Third_Inline__29"] = "Pl_Third_Inline__29";//相关推荐
+        window.localStorage["Pl_Third_Inline__30"] = "Pl_Third_Inline__30";//相关推荐(推荐给你更多更新更好的资讯)
+        window.localStorage["Pl_Core_RightRank__36"] = "Pl_Core_RightRank__36";//最赞榜单（赞标签）
+        window.localStorage["Pl_Core_RightRank__37"] = "Pl_Core_RightRank__37";//分类榜单/最赞榜(我的微博)
+		
+		//企业微博（蓝色大V微博详细内容页）
+        window.localStorage["Pl_Core_RightUserGrid__14"] = "Pl_Core_RightUserGrid__14";//分类榜单/最赞榜(我的微博)
+        window.localStorage["Pl_Core_RightTextMulti__15"] = "Pl_Core_RightTextMulti__15";//媒体标签
+        window.localStorage["Pl_Core_RightTextMulti__16"] = "Pl_Core_RightTextMulti__16";//友情链接
+        window.localStorage["Pl_Core_RightRank__17"] = "Pl_Core_RightRank__17";//预留广告位1
+        window.localStorage["Pl_Core_RightPicText__18"] = "Pl_Core_RightPicText__18";//推荐文章
+        window.localStorage["Pl_Core_RightPicMulti__19"] = "Pl_Core_RightPicMulti__19";//预留广告位3
+        window.localStorage["Pl_Core_RightTextSingle__20"] = "Pl_Core_RightTextSingle__20";//话题(企业微博)
+        window.localStorage["Pl_Core_UserGuide__21"] = "Pl_Core_UserGuide__21";//预留广告位4
+        window.localStorage["pl_content_links"] = "pl_content_links";//友情链接（旧版）
+        window.localStorage["pl_leftNav_profilePersonal"] = "pl_leftNav_profilePersonal";//头像区（旧版）
+        window.localStorage["pl_leftNav_profileContent"] = "pl_leftNav_profileContent";//导航栏（旧版）
+        window.localStorage["pl_content_contact"] = "pl_content_contact";//联系方式（旧版）
+        window.localStorage["pl_common_relations"] = "pl_common_relations";//我们的微关系
+        window.localStorage["widget_subscribe_pl_subscribe"] = "widget_subscribe_pl_subscribe";//VIP特权
+        window.localStorage["pl_share_assistant"] = "pl_share_assistant";//助手板块/微客服
+        window.localStorage["pl_content_leaders"] = "pl_content_leaders";//领导版块/创始人/推荐微博
+        window.localStorage["pl_content_subbrands"] = "pl_content_subbrands";//部门版块/子部门
+        window.localStorage["widget_myfans_pl_myfans"] = "widget_myfans_pl_myfans";//他的粉丝
+        window.localStorage["pl_content_staffs"] = "pl_content_staffs";//员工版块/工作人员
+        window.localStorage["pl_content_tags"] = "pl_content_tags";//自定义标签/企业标签
+        window.localStorage["pl_common_feedback"] = "pl_common_feedback";//意见反馈/企业帮助
     }
     function loadProfile() {//遍历选定配置中已选定的项目
         $("input").attr("checked", false).checkboxradio("refresh");
@@ -64,11 +110,21 @@
             console.log("value=" + value);
             if (key == "Box_right") {
                 if (value == "Box_right") {//勾选本项，其他项目失效
-                    $("#mainWb,#myWb,#xxxxWb,#oldver").find("input[type='checkbox']").checkboxradio('disable').checkboxradio("refresh");
+                    $("#mainWb,#myWb,#etprsWb,#xxxxWb,#oldver").find("input[type='checkbox']").checkboxradio('disable').checkboxradio("refresh");
                     $("#Box_right").checkboxradio('enable').attr("checked", true).checkboxradio("refresh");
                 } else {
-                    $("#mainWb,#myWb,#xxxxWb,#oldver").find("input[type='checkbox']").checkboxradio('enable').checkboxradio("refresh");
+                    $("#mainWb,#myWb,#etprsWb,#xxxxWb,#oldver").find("input[type='checkbox']").checkboxradio('enable').checkboxradio("refresh");
                     $("#Box_right").checkboxradio('disable').attr("checked", false).checkboxradio("refresh");
+                }
+                continue;
+            }
+            if (key == "all__") {
+                if (value == "all__") {//勾选本项，其他项目失效
+                    $("#mainWb,#myWb,#etprsWb,#xxxxWb,#oldver").find("input[type='checkbox']").checkboxradio('disable').checkboxradio("refresh");
+                    $("#all__").checkboxradio('enable').attr("checked", true).checkboxradio("refresh");
+                } else {
+                    $("#mainWb,#myWb,#etprsWb,#xxxxWb,#oldver").find("input[type='checkbox']").checkboxradio('enable').checkboxradio("refresh");
+                    $("#all__").checkboxradio('disable').attr("checked", false).checkboxradio("refresh");
                 }
                 continue;
             }
@@ -134,14 +190,27 @@
     $("#Box_right").bind("click", function (event, ui) {
         if ($(this).attr("checked") == "checked") {//勾选本项，其他项目失效
             window.localStorage["Box_right"] = "Box_right";
-            $("#mainWb,#myWb,#xxxxWb,#oldver").find("input[type='checkbox']").checkboxradio('disable').checkboxradio("refresh");
+            $("#mainWb,#myWb,#etprsWb,#xxxxWb,#oldver").find("input[type='checkbox']").checkboxradio('disable').checkboxradio("refresh");
             $("#Box_right").attr("checked", true).checkboxradio("refresh");
-        } else {
+        } else if($("#all__").attr("checked") != "checked"){
             window.localStorage.removeItem("Box_right");
-            $("#mainWb,#myWb,#xxxxWb,#oldver").find("input[type='checkbox']").checkboxradio('enable').checkboxradio("refresh");
+            $("#mainWb,#myWb,#etprsWb,#xxxxWb,#oldver").find("input[type='checkbox']").checkboxradio('enable').checkboxradio("refresh");
             $("#Box_right").attr("checked", false).checkboxradio("refresh");
         }
         $("#Box_right").checkboxradio('enable').checkboxradio("refresh");
+        window.localStorage["usedWBADtag"] = "USED";//记录下用户已经使用过
+    });
+    $("#all__").bind("click", function (event, ui) {
+        if ($(this).attr("checked") == "checked") {//勾选本项，其他项目失效
+            window.localStorage["all__"] = "all__";
+            $("#mainWb,#myWb,#etprsWb,#xxxxWb,#oldver").find("input[type='checkbox']").checkboxradio('disable').checkboxradio("refresh");
+            $("#all__").attr("checked", true).checkboxradio("refresh");
+        } else if($("#Box_right").attr("checked") != "checked") {
+            window.localStorage.removeItem("all__");
+            $("#mainWb,#myWb,#etprsWb,#xxxxWb,#oldver").find("input[type='checkbox']").checkboxradio('enable').checkboxradio("refresh");
+            $("#all__").attr("checked", false).checkboxradio("refresh");
+        }
+        $("#all__").checkboxradio('enable').checkboxradio("refresh");
         window.localStorage["usedWBADtag"] = "USED";//记录下用户已经使用过
     });
     $("#photo_style input[type='radio']").bind("click", function (event, ui) {
