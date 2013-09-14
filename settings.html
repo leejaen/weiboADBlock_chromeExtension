@@ -20,6 +20,20 @@
             <a href="#dialog1" data-icon="refresh" data-theme="e" data-role="button" data-rel="dialog">重置</a>
         </div>
         <div data-role="content">
+            <div data-role="fieldcontain" style="text-align: center;">
+                <fieldset id="switcher" data-role="controlgroup" data-type="horizontal" data-mini="true">
+                    <input id="switcherOpening" name="" value="switcherOpening" type="radio">
+                    <label for="switcherOpening">
+                        开启插件
+               
+                    </label>
+                    <input id="switcherClosing" name="" value="switcherClosing" type="radio">
+                    <label for="switcherClosing">
+                        暂停插件
+               
+                    </label>
+                </fieldset>
+            </div>
             <div data-role="collapsible-set" data-theme="b" data-content-theme="c">
                 <div data-role="collapsible" data-collapsed="false">
                     <h3>微博广告
@@ -193,15 +207,15 @@
                         <br />
                         XXXX的微博（微博详细内容页）：
                         <fieldset id="xxxxWb" data-role="controlgroup" data-type="vertical" data-mini="true">
-								<input id="Pl_Core_LeftPicText__5" name="" type="checkbox" data-theme="c">
+                            <input id="Pl_Core_LeftPicText__5" name="" type="checkbox" data-theme="c">
                             <label for="Pl_Core_LeftPicText__5">
                                 赞过
                             </label>
-								<input id="Pl_Core_RightUserGrid__8" name="" type="checkbox" data-theme="c">
+                            <input id="Pl_Core_RightUserGrid__8" name="" type="checkbox" data-theme="c">
                             <label for="Pl_Core_RightUserGrid__8">
                                 微关系（我们之间的共同关系）
                             </label>
-								<input id="Pl_Core_RightPicMulti__9" name="" type="checkbox" data-theme="c">
+                            <input id="Pl_Core_RightPicMulti__9" name="" type="checkbox" data-theme="c">
                             <label for="Pl_Core_RightPicMulti__9">
                                 微相册
                             </label>
@@ -249,94 +263,94 @@
                         <br />
                         企业微博（蓝色大V微博详细内容页）：
                         <fieldset id="etprsWb" data-role="controlgroup" data-type="vertical" data-mini="true">
-                            
-								<input id="Pl_Core_RightUserGrid__14" name="" type="checkbox" data-theme="e">
+
+                            <input id="Pl_Core_RightUserGrid__14" name="" type="checkbox" data-theme="e">
                             <label for="Pl_Core_RightUserGrid__14">
                                 媒体矩阵
                             </label>
-								<input id="Pl_Core_RightTextMulti__15" name="" type="checkbox" data-theme="e">
+                            <input id="Pl_Core_RightTextMulti__15" name="" type="checkbox" data-theme="e">
                             <label for="Pl_Core_RightTextMulti__15">
                                 媒体标签
                             </label>
-								<input id="Pl_Core_RightTextMulti__16" name="" type="checkbox" data-theme="e">
+                            <input id="Pl_Core_RightTextMulti__16" name="" type="checkbox" data-theme="e">
                             <label for="Pl_Core_RightTextMulti__16">
                                 友情链接
                             </label>
-								<input id="Pl_Core_RightRank__17" name="" type="checkbox" data-theme="e">
+                            <input id="Pl_Core_RightRank__17" name="" type="checkbox" data-theme="e">
                             <label for="Pl_Core_RightRank__17">
                                 预留广告位1
                             </label>
-								<input id="Pl_Core_RightPicText__18" name="" type="checkbox" data-theme="e">
+                            <input id="Pl_Core_RightPicText__18" name="" type="checkbox" data-theme="e">
                             <label for="Pl_Core_RightPicText__18">
                                 推荐文章
                             </label>
-								<input id="Pl_Core_RightPicMulti__19" name="" type="checkbox" data-theme="e">
+                            <input id="Pl_Core_RightPicMulti__19" name="" type="checkbox" data-theme="e">
                             <label for="Pl_Core_RightPicMulti__19">
                                 预留广告位3
                             </label>
-								<input id="Pl_Core_RightTextSingle__20" name="" type="checkbox" data-theme="e">
+                            <input id="Pl_Core_RightTextSingle__20" name="" type="checkbox" data-theme="e">
                             <label for="Pl_Core_RightTextSingle__20">
                                 话题
                             </label>
-								<input id="Pl_Core_UserGuide__21" name="" type="checkbox" data-theme="e">
+                            <input id="Pl_Core_UserGuide__21" name="" type="checkbox" data-theme="e">
                             <label for="Pl_Core_UserGuide__21">
                                 预留广告位4
                             </label>
-							
-								<input id="pl_content_links" name="" type="checkbox" data-theme="c">
+
+                            <input id="pl_content_links" name="" type="checkbox" data-theme="c">
                             <label for="pl_content_links">
                                 友情链接（旧版）
                             </label>
-								<input id="pl_leftNav_profilePersonal" name="" type="checkbox" data-theme="c">
+                            <input id="pl_leftNav_profilePersonal" name="" type="checkbox" data-theme="c">
                             <label for="pl_leftNav_profilePersonal">
                                 头像区（旧版）
                             </label>
-								<input id="pl_leftNav_profileContent" name="" type="checkbox" data-theme="c">
+                            <input id="pl_leftNav_profileContent" name="" type="checkbox" data-theme="c">
                             <label for="pl_leftNav_profileContent">
                                 导航栏（旧版）
                             </label>
-								<input id="pl_content_contact" name="" type="checkbox" data-theme="c">
+                            <input id="pl_content_contact" name="" type="checkbox" data-theme="c">
                             <label for="pl_content_contact">
                                 联系方式（旧版）
                             </label>
-								<input id="pl_content_noticeBoard" name="" type="checkbox" data-theme="c">
+                            <input id="pl_content_noticeBoard" name="" type="checkbox" data-theme="c">
                             <label for="pl_content_noticeBoard">
                                 公告栏（旧版）
                             </label>
-							
-								<input id="pl_common_relations" name="" type="checkbox" data-theme="e">
+
+                            <input id="pl_common_relations" name="" type="checkbox" data-theme="e">
                             <label for="pl_common_relations">
                                 我们的微关系
                             </label>
-								<input id="widget_subscribe_pl_subscribe" name="" type="checkbox" data-theme="e">
+                            <input id="widget_subscribe_pl_subscribe" name="" type="checkbox" data-theme="e">
                             <label for="widget_subscribe_pl_subscribe">
                                 VIP特权
                             </label>
-								<input id="pl_share_assistant" name="" type="checkbox" data-theme="e">
+                            <input id="pl_share_assistant" name="" type="checkbox" data-theme="e">
                             <label for="pl_share_assistant">
                                 助手板块/微客服
                             </label>
-								<input id="pl_content_leaders" name="" type="checkbox" data-theme="e">
+                            <input id="pl_content_leaders" name="" type="checkbox" data-theme="e">
                             <label for="pl_content_leaders">
                                 领导版块/创始人/推荐微博
                             </label>
-								<input id="pl_content_subbrands" name="" type="checkbox" data-theme="e">
+                            <input id="pl_content_subbrands" name="" type="checkbox" data-theme="e">
                             <label for="pl_content_subbrands">
                                 部门版块/子部门
                             </label>
-								<input id="widget_myfans_pl_myfans" name="" type="checkbox" data-theme="e">
+                            <input id="widget_myfans_pl_myfans" name="" type="checkbox" data-theme="e">
                             <label for="widget_myfans_pl_myfans">
                                 他的粉丝
                             </label>
-								<input id="pl_content_staffs" name="" type="checkbox" data-theme="e">
+                            <input id="pl_content_staffs" name="" type="checkbox" data-theme="e">
                             <label for="pl_content_staffs">
                                 员工版块/工作人员
                             </label>
-								<input id="pl_content_tags" name="" type="checkbox" data-theme="e">
+                            <input id="pl_content_tags" name="" type="checkbox" data-theme="e">
                             <label for="pl_content_tags">
                                 自定义标签/企业标签
                             </label>
-								<input id="pl_common_feedback" name="" type="checkbox" data-theme="e">
+                            <input id="pl_common_feedback" name="" type="checkbox" data-theme="e">
                             <label for="pl_common_feedback">
                                 意见反馈/企业帮助
                             </label>

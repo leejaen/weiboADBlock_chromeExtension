@@ -36,6 +36,7 @@
         window.localStorage["oldUser"] = "oldUser";
         window.localStorage["photo"] = "photo";
         window.localStorage["photostyle"] = "photo_default";
+        window.localStorage["switcher"] = "switcherOpening";
         window.localStorage["pl_profile_giftBox"] = "pl_profile_giftBox";
         window.localStorage["promotionalAD"] = "promotionalAD";
         window.localStorage["rebate"] = "rebate";
@@ -49,8 +50,8 @@
         window.localStorage["trustPagelet_profile_openApplist"] = "trustPagelet_profile_openApplist";
         window.localStorage["weiba"] = "weiba";
         window.localStorage["zone"] = "zone";
-		
-		//我的微博（个人页面）
+
+        //我的微博（个人页面）
         window.localStorage["Pl_Core_RightUserGrid__7"] = "Pl_Core_RightUserGrid__7";//关注/粉丝、微关系
         window.localStorage["Pl_Core_RightPicMulti__8"] = "Pl_Core_RightPicMulti__8";//微相册
         window.localStorage["Pl_Core_RightTextSingle__12"] = "Pl_Core_RightTextSingle__12";//话题
@@ -59,8 +60,8 @@
         window.localStorage["Pl_Core_RightRank__21"] = "Pl_Core_RightRank__21";//可能感兴趣的地方
         window.localStorage["Pl_Core_RightRank__24"] = "Pl_Core_RightRank__24";//最赞榜（音乐标签）
         window.localStorage["Pl_Core_RightRank__40"] = "Pl_Core_RightRank__40";//正在热映（电影标签）
-		
-		//XXXX的微博（微博详细内容页）
+
+        //XXXX的微博（微博详细内容页）
         window.localStorage["Pl_Core_LeftPicText__5"] = "Pl_Core_LeftPicText__5";//赞过
         window.localStorage["Pl_Core_RightUserGrid__8"] = "Pl_Core_RightUserGrid__8";//微关系（我们之间的共同关系）
         window.localStorage["Pl_Core_RightPicMulti__9"] = "Pl_Core_RightPicMulti__9";//微相册
@@ -74,8 +75,8 @@
         window.localStorage["Pl_Third_Inline__30"] = "Pl_Third_Inline__30";//相关推荐(推荐给你更多更新更好的资讯)
         window.localStorage["Pl_Core_RightRank__36"] = "Pl_Core_RightRank__36";//最赞榜单（赞标签）
         window.localStorage["Pl_Core_RightRank__37"] = "Pl_Core_RightRank__37";//分类榜单/最赞榜(我的微博)
-		
-		//企业微博（蓝色大V微博详细内容页）
+
+        //企业微博（蓝色大V微博详细内容页）
         window.localStorage["Pl_Core_RightUserGrid__14"] = "Pl_Core_RightUserGrid__14";//分类榜单/最赞榜(我的微博)
         window.localStorage["Pl_Core_RightTextMulti__15"] = "Pl_Core_RightTextMulti__15";//媒体标签
         window.localStorage["Pl_Core_RightTextMulti__16"] = "Pl_Core_RightTextMulti__16";//友情链接
@@ -103,7 +104,7 @@
         $("input").checkboxradio('enable').checkboxradio("refresh");
         $("textarea").val("");
 
-        var colortag = 0, deletetag = 0, styletag = 0;
+        var colortag = 0, deletetag = 0, styletag = 0, switchertag = 0;
         for (var i = 0; i < window.localStorage.length; i++) {
             var key = window.localStorage.key(i);
             var value = window.localStorage.getItem(key);
@@ -156,6 +157,11 @@
                 $("#collsett input[type='radio'][value='" + value + "']").attr("checked", true).checkboxradio("refresh");
                 continue;
             }
+            if (key == "switcher") {
+                switchertag = 1;
+                $("#switcher input[type='radio'][value='" + value + "']").attr("checked", true).checkboxradio("refresh");
+                continue;
+            }
             $("#" + value).attr("checked", true).checkboxradio("refresh");
         }
         if (deletetag == 0) {//没有勾选，默认显示
@@ -169,6 +175,10 @@
         if (styletag == 0) {//没有勾选，默认颜色
             window.localStorage["photostyle"] = "photo_default";
             $("input[type='radio'][value='photo_default']").attr("checked", true).checkboxradio("refresh");
+        }
+        if (switchertag == 0) {//没有勾选，默认开启
+            window.localStorage["switcher"] = "switcherOpening";
+            $("input[type='radio'][value='switcherOpening']").attr("checked", true).checkboxradio("refresh");
         }
     }
     loadProfile();
@@ -192,7 +202,7 @@
             window.localStorage["Box_right"] = "Box_right";
             $("#mainWb,#myWb,#etprsWb,#xxxxWb,#oldver").find("input[type='checkbox']").checkboxradio('disable').checkboxradio("refresh");
             $("#Box_right").attr("checked", true).checkboxradio("refresh");
-        } else if($("#all__").attr("checked") != "checked"){
+        } else if ($("#all__").attr("checked") != "checked") {
             window.localStorage.removeItem("Box_right");
             $("#mainWb,#myWb,#etprsWb,#xxxxWb,#oldver").find("input[type='checkbox']").checkboxradio('enable').checkboxradio("refresh");
             $("#Box_right").attr("checked", false).checkboxradio("refresh");
@@ -205,7 +215,7 @@
             window.localStorage["all__"] = "all__";
             $("#mainWb,#myWb,#etprsWb,#xxxxWb,#oldver").find("input[type='checkbox']").checkboxradio('disable').checkboxradio("refresh");
             $("#all__").attr("checked", true).checkboxradio("refresh");
-        } else if($("#Box_right").attr("checked") != "checked") {
+        } else if ($("#Box_right").attr("checked") != "checked") {
             window.localStorage.removeItem("all__");
             $("#mainWb,#myWb,#etprsWb,#xxxxWb,#oldver").find("input[type='checkbox']").checkboxradio('enable').checkboxradio("refresh");
             $("#all__").attr("checked", false).checkboxradio("refresh");
@@ -229,6 +239,15 @@
         }
         else {
             window.localStorage.removeItem(colorvalue);
+        }
+        window.localStorage["usedWBADtag"] = "USED";//记录下用户已经使用过
+    });
+    $("#switcher input[type='radio']").bind("click", function (event, ui) {
+        var switchervalue = $(this).attr("value");
+        if ($(this).attr("checked") == "checked") {
+            window.localStorage["switcher"] = switchervalue;
+        } else {
+            window.localStorage.removeItem(switchervalue);
         }
         window.localStorage["usedWBADtag"] = "USED";//记录下用户已经使用过
     });

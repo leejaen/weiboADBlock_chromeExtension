@@ -357,6 +357,7 @@ chrome.extension.onRequest.addListener(function (request, sender, sendResponse) 
             , photostyle: window.localStorage["photostyle"]//形象设置
             , sectionKey: sectionKey.substring(0, sectionKey.length - 1)//板块广告
             , colorvalue: window.localStorage["colorvalue"]//颜色设置
+            , switcher: window.localStorage["switcher"]//开关设置
             , showOrDelWBADInfo: window.localStorage["showOrDelWBADInfo"]//显示屏蔽微博设置
             , moreList: window.localStorage["moreList"]//自动展开左侧所有分组
             , Box_right: window.localStorage["Box_right"]//显示屏蔽微博设置(已关注微博所有的列表)

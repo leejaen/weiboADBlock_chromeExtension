@@ -27,6 +27,7 @@
         , others: ""
         , photostyle: ""
         , colorvalue: ""
+        , switcher: ""
         , showOrDelWBADInfo: ""
         , moreList: ""
 		, superScrolling: ""
@@ -79,6 +80,7 @@
         infos.htmlKeys = response.htmlKey;
         infos.exkeyword = response.exkeyword;
         infos.colorvalue = response.colorvalue;
+        infos.switcher = response.switcher;
         infos.showOrDelWBADInfo = response.showOrDelWBADInfo;
         infos.others = response.others;
         infos.photostyle = response.photostyle;
@@ -89,6 +91,10 @@
         infos.all__ = response.all__;
         infos.sectionKey = response.sectionKey;
         infos.funTimeout = setTimeout(function () {//修复页面首次载入没有应用设置的效果
+            if (infos.switcher == "switcherClosing") {//暂停插件
+                return false;
+            }
+
             moreList();
             hideBorder();
             hideAll__();
@@ -120,6 +126,9 @@
     });
     //++++++++++++++++++++++++++++++++++++++++++++++++++++++++取消“同时转发到我的微博”++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     $(window).scroll(function (event) {
+        if (infos.switcher == "switcherClosing") {//暂停插件
+            return false;
+        }
         if (infos.isAllowScrolling == false) {
             return false;
         }
@@ -131,7 +140,7 @@
             }, 1010);
             moreList();
             hideBorder();
-			hideAll__();
+            hideAll__();
             $(infos.sectionKey).remove();
             var allItems = $(infos.WBselector).children();//所有微博div
             if (allItems.length > infos.counter) {//有新内容
@@ -203,25 +212,27 @@
         var url = window.location.toString();
         return (url.lastIndexOf(name) >= 0)
     }
-	function hideAll__(){
-		if(infos.all__ != null && infos.all__ != undefined && infos.all__ != ""){//隐藏所有附加信息板块
-			var $test=$("div[id*='__']");
-			for(var i=0;i<$test.length;i++){
-				var id=$test.eq(i).attr("id");
-				if(id!="Pl_Official_Header__1"&&id!="Pl_Core_Nav__2"//页头
-				&&id!="Pl_Core_OwnerFeed__3"//他的主页
-				&&id!="Pl_Official_LeftProfileFeedNav__10"&&id!="Pl_Official_LeftProfileFeed__11"//微博
-				&&id!="Pl_Official_LeftInfo__14"//个人资料
-				&&id!="Pl_Official_LeftHisRelation__16"//关注/粉丝
-				&&id!="Pl_Third_Inline__18"&&id!="Pl_Third_Inline__19"//相册
-				&&id!="Pl_Core_LeftPic__32"&&id!="Pl_Core_LeftPic__33"//赞
-				&&id!="Pl_Official_LeftWeiboDetail__28"//某微博详细页面的微博详情
-				){
-					$test.eq(i).hide();
-				}
-			}
-		}
-	}
+    function hideAll__() {
+        if (infos.all__ != null && infos.all__ != undefined && infos.all__ != "") {//隐藏所有附加信息板块
+            var $test = $("div[id*='__']");
+            for (var i = 0; i < $test.length; i++) {
+                var id = $test.eq(i).attr("id");
+                if (id != "Pl_Official_Header__1" && id != "Pl_Core_Nav__2"//页头
+				&& id != "Pl_Core_OwnerFeed__3"//他的主页
+				&& id != "Pl_Official_LeftProfileFeedNav__10" && id != "Pl_Official_LeftProfileFeed__11"//微博
+				&& id != "Pl_Official_LeftInfo__14"//个人资料
+				&& id != "Pl_Official_LeftHisRelation__16"//关注/粉丝
+				&& id != "Pl_Third_Inline__18" && id != "Pl_Third_Inline__19"//相册
+				&& id != "Pl_Core_LeftPic__32" && id != "Pl_Core_LeftPic__33"//赞
+				&& id != "Pl_Official_LeftWeiboDetail__28"//某微博详细页面的微博详情
+				&& id != "Pl_Core_MixFeed__13"//微博点评 |此地热议 | 周边热议
+				&& id != "Pl_Core_LeftPic__7"//此地热图
+				) {
+                    $test.eq(i).hide();
+                }
+            }
+        }
+    }
     function hideBorder() {
         if (infos.Box_right != null && infos.Box_right != undefined && infos.Box_right != "") {//隐藏右侧
             //微博主页
