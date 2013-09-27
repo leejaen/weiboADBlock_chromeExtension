@@ -227,6 +227,8 @@
 				&& id != "Pl_Official_LeftWeiboDetail__28"//某微博详细页面的微博详情
 				&& id != "Pl_Core_MixFeed__13"//微博点评 |此地热议 | 周边热议
 				&& id != "Pl_Core_LeftPic__7"//此地热图
+				&& id != "Pl_Core_Header__1"//一条微博页面的页头
+				&& id != "Pl_Official_LeftWeiboDetail__40"//一条微博页面的微博内容
 				) {
                     $test.eq(i).hide();
                 }
