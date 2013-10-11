@@ -8,12 +8,12 @@
             } catch (e) {
                 return "enterprise";
             }
-            return href.substr(0, href.lastIndexOf("&"));
+            return href;
         })()
 
         , WBselector: ".WB_feed[node-type='feed_list']"
         , eachWBselector: ".WB_feed[node-type='feed_list']>div"
-        , gallerySelector: "img[class='bigcursor'][node-type='feed_list_media_bgimg']"
+        //, gallerySelector: "img[class='bigcursor'][node-type='feed_list_media_bgimg']"
 
         , theNickName: $("#pl_content_top a[class='gn_name']").text()//自己的名字，下面的判断允许自己微博广告时候用
         , lastADcounter: 0
@@ -65,14 +65,15 @@
         }
     }
     $(function () {//微博条目选择器
+	
         if (infos.WBVR == 5) {
             infos.WBselector = ".WB_feed[node-type='feed_list']";
             infos.eachWBselector = ".WB_feed[node-type='feed_list']>div[action-type='feed_list_item']";
-            infos.gallerySelector = "img[class='bigcursor'][node-type='feed_list_media_bgimg']";
+            //.gallerySelector = "img[class='bigcursor'][node-type='feed_list_media_bgimg']";
         } else {//企业版与3.6版一样
             infos.WBselector = ".feed_lists dl[action-type='feed_list_item']";
             infos.eachWBselector = ".feed_lists dl[action-type='feed_list_item']";
-            infos.gallerySelector = "img[class='bigcursor'][action-type='feed_list_media_img']";
+            //infos.gallerySelector = "img[class='bigcursor'][action-type='feed_list_media_img']";
         }
     });
     chrome.extension.sendRequest({ method: "getWBADsmurf" }, function (response) {
@@ -132,6 +133,7 @@
         if (infos.isAllowScrolling == false) {
             return false;
         }
+		
         clearTimeout(infos.funTimeout);
         infos.isAllowScrolling = false;//重置成正在滚动
         infos.funTimeout = setTimeout(function () {
@@ -143,6 +145,9 @@
             hideAll__();
             $(infos.sectionKey).remove();
             var allItems = $(infos.WBselector).children();//所有微博div
+            //infos.WBselector = ".WB_feed[node-type='feed_list']";
+            //infos.eachWBselector = ".WB_feed[node-type='feed_list']>div[action-type='feed_list_item']";
+		console.log(infos.photostyle+","+infos.WBselector+","+allItems.length+","+infos.counter+","+$("#pl_content_top a").eq(0).attr("href"));
             if (allItems.length > infos.counter) {//有新内容
                 infos.counter = $(infos.WBselector).children().length;
                 adAnalyzer();
@@ -229,6 +234,14 @@
 				&& id != "Pl_Core_LeftPic__7"//此地热图
 				&& id != "Pl_Core_Header__1"//一条微博页面的页头
 				&& id != "Pl_Official_LeftWeiboDetail__40"//一条微博页面的微博内容
+				
+				&& id != "Pl_Official_LeftWeiboDetail__33"//蓝色大V微博详情页
+				&& id != "Pl_Core_OwnerFeed__5"//企业微博的微博主页
+				&& id != "Pl_Official_LeftProfileFeedNav__27"//企业微博的微博列表栏目
+				&& id != "Pl_Official_LeftProfileFeed__28"//企业微博的微博列表
+				&& id != "Pl_Core_LeftTextSingle__18"//企业微博的企业资料
+				&& id != "Pl_Third_Inline__37"//企业微博的微博相册
+				&& id != "Pl_Official_LeftHisRelation__38"//企业微博的微博相册
 				) {
                     $test.eq(i).hide();
                 }
