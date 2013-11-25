@@ -242,6 +242,21 @@
 				&& id != "Pl_Core_LeftTextSingle__18"//企业微博的企业资料
 				&& id != "Pl_Third_Inline__37"//企业微博的微博相册
 				&& id != "Pl_Official_LeftHisRelation__38"//企业微博的微博相册
+				&& id != "Pl_Official_LeftWeiboDetail__30"//微博的更多评论页面
+				&& id != "Pl_Official_LeftProfileFeedNav__12"//个人微博标签页
+				&& id != "Pl_Official_LeftProfileFeed__13"//微博的更多评论页面
+				&& id != "Pl_Third_Inline__20"//相册
+				&& id != "Pl_Core_LeftPicTextGalley__22"//足迹
+				&& id != "Pl_Core_LeftPic__32"//足迹
+				&& id != "Pl_Core_LeftPic__33"//足迹
+				&& id != "Pl_Core_LeftPicText__34"//足迹
+				&& id != "Pl_Core_LeftPicText__35"//足迹
+				&& id != "Pl_Core_LeftPicText__36"//足迹
+				&& id != "Pl_Core_LeftPic__37"//足迹
+				&& id != "Pl_Core_LikesFeed__38"//足迹
+				&& id != "Pl_Core_RightRank__39"//足迹
+				&& id != "Pl_Core_RightRank__40"//足迹
+				
 				) {
                     $test.eq(i).hide();
                 }

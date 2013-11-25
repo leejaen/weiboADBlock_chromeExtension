@@ -22,6 +22,7 @@
         window.localStorage["groupon"] = "groupon";
         window.localStorage["help"] = "help";
         window.localStorage["hotmblog"] = "hotmblog";
+        window.localStorage["AllRightAD"] = "AllRightAD";
         window.localStorage["interest"] = "interest";
         window.localStorage["weiborecom"] = "weiborecom";
         window.localStorage["invalidWB"] = "invalidWB";

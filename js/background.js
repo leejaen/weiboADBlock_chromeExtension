@@ -44,7 +44,7 @@ chrome.extension.onRequest.addListener(function (request, sender, sendResponse) 
         var smurfs = "$这条微博没有节操,推广来自,微博推广,来自粉丝头条,精彩微博推荐,";//这种肯定是广告
         var htmlKey = "taobao.com,sinaapp.com,wby.so,url.com,.feitao,emop.cn,pianke.me,tmall.com,taourl.com,51fanli.com,immomo.com,kktalk.com,renrentuan.,zhubajie.com,taoppp.com,weiqc.com,xigouq00.com,wqc.so,likeface.com,event.video.sina.com,event.weibo.com,apps.weibo.com,badge.weibo.com,ua.yesweibo.com,wyht.so,dlj.so,qoo10.cn,weiligongshe.com,fanlibang.com,h2w.iask.cn,acs.56.com,lcpinai.com,lijitui.com,popular_buss,W_no_border,feed_spread_contain,feed_spread,";//默认2013年1月16日17:28:25删除kan.weibo.com,2013年2月17日9:44:37删除vdisk.weibo.comW_no_border,W_no_border:好友关注
         //feed_spread_contain 屏蔽好友关注微博，有此内容的为此类微博,feed_spread 屏蔽好友关注微博，有此内容的为此类微博
-        var sectionKey = "#pl_content_biztips,div[ad-data],*[node-type^='ad'],.promotion_twist,div[feedtype='ad'],";//默认顶部（发布框下方）广告,下部广告(a[suda-uatrack],),v3.6一样
+        var sectionKey = "#pl_content_biztips,div[ad-data],*[node-type^='ad'],.promotion_twist,div[feedtype='ad'],#topicAD";//默认顶部（发布框下方）广告,下部广告(a[suda-uatrack],),v3.6一样
         var keyWord = "", exKeyword = "", others = "", Box_right = "", all__ = "";//, photostyle = "";
         for (var i = 0; i < window.localStorage.length; i++) {
             var key = window.localStorage.key(i);
@@ -237,6 +237,9 @@ chrome.extension.onRequest.addListener(function (request, sender, sendResponse) 
                     break;
                 case "WB_webim"://屏蔽右侧私信聊天
                     sectionKey += "#WB_webim,#cometd_uc,.webim_list&.WBIM_fold,";
+                    break;
+                case "AllRightAD"://右侧所有广告
+                    sectionKey += "#trustPagelet_indexright_recom>div:eq(1)>div:not(:eq(1)),";
                     break;
                 case "interest"://可能感兴趣的人
                     sectionKey += "#trustPagelet_indexright_recom>div:eq(1)>div:eq(1),#trustPagelet_recom_interestv5,#trustPagelete_recom_interest";
